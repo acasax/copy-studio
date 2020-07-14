@@ -14,18 +14,18 @@ function accrodion () {
             Self.find('.accrodion.active').find('.accrodion-content').show();
             accordion.each(function() {
                 $(this).find('.accrodion-title').on('click', function () {
-                    if ($(this).parent().hasClass('active') === false ) {                   
+                    if ($(this).parent().hasClass('active') === false ) {
                         $('.accrodion-grp.'+accrodionName).find('.accrodion').removeClass('active');
                         $('.accrodion-grp.'+accrodionName).find('.accrodion').find('.accrodion-content').slideUp();
-                        $(this).parent().addClass('active');                    
-                        $(this).parent().find('.accrodion-content').slideDown();        
+                        $(this).parent().addClass('active');
+                        $(this).parent().find('.accrodion-content').slideDown();
                     };
-                    
+
 
                 });
             });
         });
-        
+
     };
 }
 
@@ -65,7 +65,7 @@ function thmOwlCarousel() {
             navText: [
                 '<i class="fa fa-angle-left"></i>',
                 '<i class="fa fa-angle-right"></i>'
-            ],            
+            ],
             dots: true,
             autoWidth: false,
             autoplay: true,
@@ -90,7 +90,7 @@ function thmOwlCarousel() {
                 }
             }
         });
-    }; 
+    };
     if ($('.team-carousel').length) {
         $('.team-carousel').owlCarousel({
             loop: true,
@@ -99,7 +99,7 @@ function thmOwlCarousel() {
             navText: [
                 '<i class="fa fa-angle-left"></i>',
                 '<i class="fa fa-angle-right"></i>'
-            ],            
+            ],
             dots: false,
             autoWidth: false,
             autoplay: true,
@@ -124,7 +124,7 @@ function thmOwlCarousel() {
                 }
             }
         });
-    }; 
+    };
     if ($('.banner-carousel-two').length) {
         $('.banner-carousel-two').owlCarousel({
             loop: true,
@@ -133,7 +133,7 @@ function thmOwlCarousel() {
             navText: [
                 '<i class="fa fa-angle-left"></i>',
                 '<i class="fa fa-angle-right"></i>'
-            ],            
+            ],
             dots: true,
             autoWidth: false,
             autoplay: true,
@@ -160,7 +160,7 @@ function thmOwlCarousel() {
                 }
             }
         });
-    }; 
+    };
     if ($('.we-believe-carousel').length) {
         $('.we-believe-carousel').owlCarousel({
             loop: true,
@@ -169,7 +169,7 @@ function thmOwlCarousel() {
             navText: [
                 '<i class="fa fa-angle-left"></i>',
                 '<i class="fa fa-angle-right"></i>'
-            ],            
+            ],
             dots: true,
             autoWidth: false,
             autoplay: true,
@@ -196,7 +196,7 @@ function thmOwlCarousel() {
                 }
             }
         });
-    }; 
+    };
     if ($('.brand-carousel').length) {
         $('.brand-carousel').owlCarousel({
             loop: true,
@@ -205,7 +205,7 @@ function thmOwlCarousel() {
             navText: [
                 '<i class="fa fa-angle-left"></i>',
                 '<i class="fa fa-angle-right"></i>'
-            ],            
+            ],
             dots: false,
             autoWidth: false,
             autoplay: true,
@@ -232,7 +232,7 @@ function thmOwlCarousel() {
                 }
             }
         });
-    }; 
+    };
 }
 
 
@@ -297,7 +297,7 @@ function stickyHeader() {
     if ($('.stricky').length) {
         var strickyScrollPos = 100;
         var stricky = $('.stricky');
-        if ($(window).scrollTop() > strickyScrollPos) {        	
+        if ($(window).scrollTop() > strickyScrollPos) {
             stricky.removeClass('slideIn animated');
             stricky.addClass('stricky-fixed slideInDown animated');
             $('.scroll-to-top').fadeIn(500);
@@ -357,36 +357,158 @@ function thmScrollAnim() {
     };
 }
 
+
+
+
+
+
+
+
 function contactFormValidation() {
+
+
+
+    const languages = {
+        'sr': {
+            'globalErrorMsg': "Nešto nije uredu. Pokušajte ponovo ili kontaktirajte nas.",
+            'nameRequired': "Unesite Vaše ime",
+            'nameMinLength': "Vaše ima mora da sadrži najmanje 2 slova",
+            'messageRequired': "Unesite poruku",
+            'messageMinLength': "Vaša poruka mora da sadrži najmanje 20 slova",
+            'emailRequired': "Unesite Vašu e adresu",
+            'emailValid': 'Vaša adresa nije validnog formata',
+            'secPartnerWelcome': "Kontaktiraćemo Vas u najkraćem vremenskom intervalu.",
+            'contactWelcome': 'Hvala Vam na interesovanju.',
+            'contactSecMsg': "Kontaktiraćemo Vas u najkraćem vremenskom intervalu.",
+        },
+        'en': {
+            'globalErrorMsg': "Something gose wrong.Try again or contact our services.",
+            'nameRequired': "Please enter your name",
+            'nameMinLength': "Your name must consist of at least 2 characters",
+            'messageRequired': "Please enter message",
+            'messageMinLength': "Your message must consist of at least 20 characters",
+            'emailRequired': "Please enter your email",
+            'secPartnerWelcome': "We will contact you in the shortest possible time.",
+            'contactWelcome': 'Thank you for your interest.',
+            'contactSecMsg': "We will contact you in the shortest possible time.",
+        }
+    }
+
+
+    const translate = (attribute)=>{
+        const href = window.location.href
+        let lang = 'sr'
+        if(href.includes('en')) lang = 'en';
+        return languages[lang][attribute]
+    }
+
+
+    let language = void(0)
+    let lang = 'en'
+
+    if(localStorage.getItem('copyStudio')){
+        lang = localStorage.getItem('copyStudio')
+    }
+
+
+
+    $('.contact-form #name').val('Stefan')
+    $('.contact-form #email').val('stefan.milutinovic.rs@gmail.com')
+    $('.contact-form #message').val('Some fucking message to send!!!!!')
+
+
+    /** CONTACT FORM SUBMIT / VALIDATION */
     if ($('.contact-form').length) {
-        $('.contact-form').validate({ // initialize the plugin
-            rules: {
-                name: {
-                    required: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                message: {
-                    required: true
-                },
-                subject: {
-                    required: true
-                }
+    $('.contact-form').validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
             },
-            submitHandler: function(form) {
-                // sending value with ajax request
-                $.post($(form).attr('action'), $(form).serialize(), function(response) {
-                    $(form).find('.form-result').append(response);
-                    $(form).find('input[type="text"]').val('');
-                    $(form).find('input[type="email"]').val('');
-                    $(form).find('textarea').val('');
-                    console.log(response);
-                });
-                return false;
+            message: {
+                required: true,
+                minlength: 20
+            },
+            email: {
+                required: true,
+                email: true
             }
-        });
+        },
+        messages: {
+            name: {
+                required: translate('nameRequired'),
+                minlength: translate('nameMinLength'),
+            },
+            message: {
+                required:  translate('messageRequired'),
+                minlength: translate('messageMinLength'),
+            },
+            email: {
+                required: translate('emailRequired'),
+            }
+        },
+        submitHandler: function submitHandler(form) {
+            const data = {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                message: $('#message').val(),
+                "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
+            }
+            $(form).ajaxSubmit({
+                url: 'app/ajax/send_email.php',
+                type: "POST",
+                data: data,
+                dataType: "JSON",
+                beforeSend: function () {
+                    $('.loading-area').css('display', 'block')
+                },
+                success: function success(data) {
+                    if (data.type === "message") {
+                        swal({
+                            title: translate(data.welcome),
+                            text: translate(data.secMsg),
+                            timer: 4000,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            type: "success"
+                        });
+                        form.reset();
+                        grecaptcha.reset();
+                    } else {
+                        let str = data.text;
+                        swal({
+                            title: "Error",
+                            text: str,
+                            timer: 3000,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            type: "error"
+                        });
+                        form.valid()
+                        grecaptcha.reset();
+                    }
+                },
+                error: function error() {
+                    swal({
+                        title: "Error",
+                        text: translate('globalErrorMsg'),
+                        timer: 3000,
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                        type: "error"
+                    });
+                    grecaptcha.reset();
+                },
+                complete: function () {
+                    $('.loading-area').fadeOut(2000)
+                    setTimeout( ()=>{
+                        $('.loading-area').css('display', 'none')
+                    },1000)
+                }
+            });
+        }
+    });
+
     }
 }
 
@@ -449,7 +571,7 @@ function bootstrapAnimatedLayer() {
      * on SitePoint by Maria Antonietta Perna
      */
 
-    //Function to animate slider captions 
+    //Function to animate slider captions
     function doAnimations(elems) {
         //Cache the animationend event in a variable
         var animEndEv = 'webkitAnimationEnd animationend';
@@ -463,23 +585,23 @@ function bootstrapAnimatedLayer() {
         });
     }
 
-    //Variables on page load 
+    //Variables on page load
     var $myCarousel = $('#minimal-bootstrap-carousel'),
         $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 
-    //Initialize carousel 
+    //Initialize carousel
     $myCarousel.carousel({
         interval: 7000
     });
 
-    //Animate captions in first slide on page load 
+    //Animate captions in first slide on page load
     doAnimations($firstAnimatingElems);
 
-    //Pause carousel  
+    //Pause carousel
     $myCarousel.carousel('pause');
 
 
-    //Other slides to be animated on carousel slide event 
+    //Other slides to be animated on carousel slide event
     $myCarousel.on('slide.bs.carousel', function(e) {
         var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
         doAnimations($animatingElems);
@@ -501,7 +623,7 @@ function pogressbarAnim () {
 function thmHalfChart() {
     if ($('.circle').length) {
         var cricleWrap = $('.circle');
-        cricleWrap.each(function () {           
+        cricleWrap.each(function () {
             var Self = $(this);
             var circleSize = Self.data('size');
             var circleValue = Self.data('value');
@@ -514,19 +636,19 @@ function thmHalfChart() {
                     fill: { color: circleColor }
                 });
             }, { offset: 'bottom-in-view' });
-             
+
         });
     };
 }
 thmHalfChart();
 
 
-// instance of fuction while Document ready event   
+// instance of fuction while Document ready event
 jQuery(document).on('ready', function() {
     (function($) {
         thmMailchimp();
         thmLightBox();
-        thmCounter();        
+        thmCounter();
         contactFormValidation();
         scrollToTarget();
         thmVideoPopup();
@@ -550,6 +672,6 @@ jQuery(window).on('load', function() {
 // instance of fuction while Window Scroll event
 jQuery(window).on('scroll', function() {
     (function($) {
-        stickyHeader();   
+        stickyHeader();
     })(jQuery);
 });

@@ -4,37 +4,37 @@
 ||||||||||||||||||||||||||||              TABLE OF CONTENT                  ||||||||||||||||||||||||||||||||||||
 ****************************************************************************************************************
 ****************************************************************************************************************
-* 1. imported styles 
-* 2. miscelnious styles 
-* 3. header styles 
-* 4. banner styles 
-* 5. welcome styles 
-* 6. what we do styles 
-* 7. brand styles 
-* 8. footer subscribe styles 
-* 9. footer styles 
-* 10. footer bottom styles 
-* 11. recent project styles 
-* 12. cta styles 
-* 13. testimonials styles 
-* 14. we belive carousel styles 
-* 15. faq section styles 
-* 16. team styles 
-* 17. services styles 
-* 18. video box styles 
-* 19. video box styles 
-* 20. contact styles 
-* 21. page title styles 
-* 22. about styles 
-* 23. blog styles 
-* 24. error 404 styles 
-* 25. pricing styles 
-* 26. sidebar styles 
+* 1. imported styles
+* 2. miscelnious styles
+* 3. header styles
+* 4. banner styles
+* 5. welcome styles
+* 6. what we do styles
+* 7. brand styles
+* 8. footer subscribe styles
+* 9. footer styles
+* 10. footer bottom styles
+* 11. recent project styles
+* 12. cta styles
+* 13. testimonials styles
+* 14. we belive carousel styles
+* 15. faq section styles
+* 16. team styles
+* 17. services styles
+* 18. video box styles
+* 19. video box styles
+* 20. contact styles
+* 21. page title styles
+* 22. about styles
+* 23. blog styles
+* 24. error 404 styles
+* 25. pricing styles
+* 26. sidebar styles
 ****************************************************************************************************************
 ||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
 ****************************************************************************************************************/
-/************************** 
-* 1. imported styles 
+/**************************
+* 1. imported styles
 ***************************/
 @import url(https://fonts.googleapis.com/css?family=Pacifico|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i);
 @import url(bootstrap.min.css);
@@ -50,8 +50,8 @@
 @import url(../plugins/fontawesome-5/css/fontawesome-all.min.css);
 @import url(../plugins/icofont/css/icofont.css);
 @import url(../plugins/printify-icon/style.css);
-/************************** 
-* 2. miscelnious styles 
+/**************************
+* 2. miscelnious styles
 ***************************/
 body {
   font-family: 'Rubik';
@@ -98,7 +98,7 @@ a:active {
   outline: none;
   display: inline-block;
   vertical-align: middle;
-  background: #FF4328;
+  background: #9c2489;
   border-radius: 35px;
   color: #fff;
   font-family: 'Rubik';
@@ -108,12 +108,12 @@ a:active {
   transition: all .4s; }
   .thm-btn:hover {
     background: #fff;
-    color: #FF4328; }
-  .thm-btn.yellow-bg {
-    background: #FEC931;
-    color: #212121; }
-    .thm-btn.yellow-bg:hover {
-      background: #FF4328;
+    color: #9c2489; }
+  .thm-btn.grey-bg {
+    background: #a09fa2;
+    color: #ffffff; }
+    .thm-btn.grey-bg:hover {
+      background: #9c2489;
       color: #fff; }
 
 .sec-title {
@@ -200,8 +200,8 @@ body.active-preloader-ovh {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0; } }
-/************************** 
-* 3. header styles 
+/**************************
+* 3. header styles
 ***************************/
 .header-navigation {
   background-color: transparent;
@@ -379,8 +379,8 @@ body.active-preloader-ovh {
       padding-top: 30px;
       padding-bottom: 30px; }
 
-/************************** 
-* 4. banner styles 
+/**************************
+* 4. banner styles
 ***************************/
 #minimal-bootstrap-carousel {
   margin-top: 0px;
@@ -587,8 +587,8 @@ body.active-preloader-ovh {
       margin-top: 30px;
       margin-bottom: 50px; }
 
-/************************** 
-* 5. welcome styles 
+/**************************
+* 5. welcome styles
 ***************************/
 .welcome-section {
   background: #F5F6FA; }
@@ -616,8 +616,8 @@ body.active-preloader-ovh {
     .welcome-section .welcome-content a.thm-btn {
       margin-top: 55px; }
 
-/************************** 
-* 6. what we do styles 
+/**************************
+* 6. what we do styles
 ***************************/
 .what-we-do {
   padding-bottom: 140px; }
@@ -735,8 +735,8 @@ body.active-preloader-ovh {
     padding-top: 55px;
     padding-bottom: 53px; }
 
-/************************** 
-* 7. brand styles 
+/**************************
+* 7. brand styles
 ***************************/
 .brand-carousel-wrapper {
   background: #9c2489;
@@ -749,8 +749,8 @@ body.active-preloader-ovh {
       .brand-carousel-wrapper .brand-carousel img:hover {
         opacity: 1; }
 
-/************************** 
-* 8. footer subscribe styles 
+/**************************
+* 8. footer subscribe styles
 ***************************/
 .footer-subscribe {
   background: #212121; }
@@ -802,8 +802,8 @@ body.active-preloader-ovh {
         /* Firefox 18- */
         color: rgba(255, 255, 255, 0.6); }
 
-/************************** 
-* 9. footer styles 
+/**************************
+* 9. footer styles
 ***************************/
 .footer {
   background: #212121;
@@ -923,8 +923,8 @@ body.active-preloader-ovh {
   .footer .single-post-widget + .single-post-widget {
     margin-top: 55px; }
 
-/************************** 
-* 10. footer bottom styles 
+/**************************
+* 10. footer bottom styles
 ***************************/
 .footer-bottom {
   background: #171717; }
@@ -958,8 +958,8 @@ body.active-preloader-ovh {
     .footer-bottom .thm-container .social-box a.fa-youtube {
       background: #FF4328; }
 
-/************************** 
-* 11. recent project styles 
+/**************************
+* 11. recent project styles
 ***************************/
 .recent-projects .single-recent-project:hover .img-box:before {
   opacity: 1; }
@@ -1083,8 +1083,8 @@ body.active-preloader-ovh {
 .project-details-page .img-box-wrapper .row + .row {
   margin-top: 30px; }
 
-/************************** 
-* 12. cta styles 
+/**************************
+* 12. cta styles
 ***************************/
 .cta-style-two {
   background: #212121;
@@ -1232,8 +1232,8 @@ body.active-preloader-ovh {
       background: #FF4328;
       color: #fff; }
 
-/************************** 
-* 13. testimonials styles 
+/**************************
+* 13. testimonials styles
 ***************************/
 .testi-carousel-wrapper {
   position: relative;
@@ -1305,8 +1305,8 @@ body.active-preloader-ovh {
           font-weight: 500;
           margin-top: 30px; }
 
-/************************** 
-* 14. we belive carousel styles 
+/**************************
+* 14. we belive carousel styles
 ***************************/
 .we-believe-carousel {
   position: relative;
@@ -1362,8 +1362,8 @@ body.active-preloader-ovh {
     .we-believe-carousel .single-we-believe .text-box a.thm-btn {
       margin-top: 50px; }
 
-/************************** 
-* 15. faq section styles 
+/**************************
+* 15. faq section styles
 ***************************/
 .faq-content {
   padding-left: 100px;
@@ -1417,8 +1417,8 @@ body.active-preloader-ovh {
       content: '\f068';
       color: #FF4328; }
 
-/************************** 
-* 16. team styles 
+/**************************
+* 16. team styles
 ***************************/
 .team-section {
   padding-bottom: 150px; }
@@ -1480,8 +1480,8 @@ body.active-preloader-ovh {
           .team-section .single-team-carousel .inner .team-content p + p {
             margin-top: 30px; }
 
-/************************** 
-* 17. services styles 
+/**************************
+* 17. services styles
 ***************************/
 .service-style-one {
   background: #F5F6FA;
@@ -1976,8 +1976,8 @@ body.active-preloader-ovh {
       font-size: 16px;
       float: right; }
 
-/************************** 
-* 18. video box styles 
+/**************************
+* 18. video box styles
 ***************************/
 .video-box {
   position: relative; }
@@ -2008,8 +2008,8 @@ body.active-preloader-ovh {
     bottom: 40px;
     right: 40px; }
 
-/************************** 
-* 19. video box styles 
+/**************************
+* 19. video box styles
 ***************************/
 .design-guideline {
   background: #F5F6FA;
@@ -2102,8 +2102,8 @@ body.active-preloader-ovh {
       font-size: 14px;
       font-weight: normal; }
 
-/************************** 
-* 20. contact styles 
+/**************************
+* 20. contact styles
 ***************************/
 #contact-google-map {
   width: 100%;
@@ -2117,7 +2117,7 @@ body.active-preloader-ovh {
   .contact-section .title span {
     font-family: 'Pacifico';
     font-size: 20px;
-    color: #FF4328; }
+    color: #9c2489; }
   .contact-section .title h2 {
     color: #212121;
     font-size: 60px;
@@ -2198,8 +2198,8 @@ body.active-preloader-ovh {
 .contact-section .contact-form label.error {
   display: none !important; }
 
-/************************** 
-* 21. page title styles 
+/**************************
+* 21. page title styles
 ***************************/
 .page-title {
   background: #F5F6FA;
@@ -2260,8 +2260,8 @@ body.active-preloader-ovh {
       margin-right: 15px;
       color: #fff; }
 
-/************************** 
-* 22. about styles 
+/**************************
+* 22. about styles
 ***************************/
 .about-section .single-about .text-box {
   background: #F5F6FA;
@@ -2308,8 +2308,8 @@ body.active-preloader-ovh {
       background: #fff;
       color: #FF4328; }
 
-/************************** 
-* 23. blog styles 
+/**************************
+* 23. blog styles
 ***************************/
 .blog-style-one .single-blog-post .text-box {
   background: #F5F6FA;
@@ -2586,8 +2586,8 @@ body.active-preloader-ovh {
 .blog-details-page .leave-a-comment .contact-form label.error {
   display: none !important; }
 
-/************************** 
-* 24. error 404 styles 
+/**************************
+* 24. error 404 styles
 ***************************/
 .header-404 {
   background: #F4F5F9;
@@ -2613,8 +2613,8 @@ body.active-preloader-ovh {
   background: #212121;
   color: #fff; }
 
-/************************** 
-* 25. pricing styles 
+/**************************
+* 25. pricing styles
 ***************************/
 .single-pricing {
   background: #F4F5F9;
@@ -2708,8 +2708,8 @@ body.active-preloader-ovh {
     font-weight: 500;
     margin-top: 26px; }
 
-/************************** 
-* 26. sidebar styles 
+/**************************
+* 26. sidebar styles
 ***************************/
 .sidebar {
   background: #F4F5F9;
@@ -2827,3 +2827,13 @@ body.active-preloader-ovh {
         color: #FF4328; }
         .sidebar .single-sidebar.category-sidebar ul.category-list a:hover:before {
           background: #FF4328; }
+
+.contact-form-buttons-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-section .single-contact-info .social {
+  padding-bottom: 10px;
+}
