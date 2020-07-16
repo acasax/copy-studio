@@ -114,7 +114,7 @@
         background-image: none;
         border: 1px solid #212121;
         border-radius: 4px;
-        padding: 9px 9px; 
+        padding: 9px 9px;
         position: absolute;top:0;right:0;margin-top: 11px;
         margin-right: 10px;
         display: block;
@@ -127,8 +127,8 @@
         width: 20px;
     }
     .header-navigation.navbar .navbar-nav .sub-nav-toggler .icon-bar + .icon-bar {
-        margin-top: 4px;        
-    }    
+        margin-top: 4px;
+    }
     .header .header-navigation.navbar .nav > li + li {margin-left: 0;}
     .header .header-navigation .navbar-form {width: 100%;max-width: 100%;}
     .header-navigation .thm-container {padding-right: 15px;padding-left: 15px;}
@@ -140,9 +140,10 @@
     .header-navigation ul.navigation-box > li.current > a {background: #FF4328;color: #fff;}
     .header-navigation .thm-container {padding-right: 15px;}
     .header-navigation .thm-container .navbar-header {padding-right: 300px;}
-    .header-navigation .thm-container .right-side-box {top:30px;-webkit-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0);right: 15px;} 
+    .header-navigation .thm-container .right-side-box {top:30px;-webkit-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0);right: 15px;}
     .header-navigation .thm-container .navbar-header {position: static;-webkit-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0);}
-    .header-navigation ul.navigation-box > li::before {display: none;} 
+    .header-navigation ul.navigation-box > li::before {display: none;}
+
 }
 
 @media(max-width: 1199px) {
@@ -188,10 +189,11 @@
     .cta-style-two .image-block {transform: scale(1) translateY(0%); transform-origin: top left; top: 0%; position: relative;width: 100%;margin-bottom: 85px;}
     .cta-style-two .image-block img {width: 100%;}
     .cta-style-two .image-block .content-block {display: flex; }
-        
+
     .cta-style-two .cta-style-two-content {
         padding-left: 0;
     }
+
 
 }
 
@@ -239,6 +241,43 @@
 		margin-left: 0;
 	}
     .slider-home-one .content h2 {font-size: 90px;line-height: 100px;}
+
+    .footer .container {
+        max-width: 750px !important;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .footer {
+        padding-right: 0!important;
+        padding-left:0 !important;
+        padding-bottom: 0px !important;
+    }
+
+    .footer .container .inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-bottom .thm-container {
+        padding: 15px 0;
+    }
+
+    .footer .container .inner > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer .container .inner > div.company-services {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .mc4wp-form .mc4wp-form-fields label a {
+        font-size: 13px;
+    }
+
 }
 
 @media (max-width: 736px) {
@@ -309,6 +348,8 @@
         display: none;
     }
 
+
+
 }
 
 @media (max-width: 414px) {
@@ -323,6 +364,38 @@
 	.footer-subscribe form.subscribe-form {padding-left: 20px;padding-right: 20px;}
 	.footer-subscribe form.subscribe-form input {min-width: 100%;margin-right: 0;margin-bottom: 25px;}
     .service-style-one .service-content .btn-box a.thm-btn {margin-right: 0;}
+
+    .footer {
+        padding-right: 0!important;
+        padding-left:0 !important;
+        padding-bottom: 0px !important;
+    }
+
+    .footer .container .inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-bottom .thm-container {
+        padding: 15px 0;
+    }
+
+    .footer .container .inner > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer .container .inner > div.company-services {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .mc4wp-form .mc4wp-form-fields label a {
+        font-size: 13px;
+    }
+
+
 }
 @media (max-width: 320px) {
 	.thm-btn {padding-left: 65px;padding-right: 65px;}
@@ -336,4 +409,6 @@
 	.contact-section .contact-form input, .contact-section .contact-form textarea {padding-left: 30px;}
 	.testi-carousel-wrapper .thm-container .owl-theme .owl-dots {bottom: 35px;}
     .contact-section .title h2 {font-size: 46px; line-height: 46px; }
+
+
 }
