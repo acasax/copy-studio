@@ -412,11 +412,6 @@ function contactFormValidation() {
 
 
 
-    $('.contact-form #name').val('Stefan')
-    $('.contact-form #email').val('stefan.milutinovic.rs@gmail.com')
-    $('.contact-form #message').val('Some fucking message to send!!!!!')
-
-
     /** CONTACT FORM SUBMIT / VALIDATION */
     if ($('.contact-form').length) {
     $('.contact-form').validate({
