@@ -1,5 +1,12 @@
 "use strict"; // Start of use strict
 
+function page_loader() {
+    $('.loading-area').fadeOut(2000)
+    setTimeout(()=>{
+        $('.loading-area').css('display','none')
+    },1500)
+};
+page_loader()
 
 
 function accrodion () {
@@ -611,13 +618,6 @@ if ($('#newsletter_form').length) {
 }
 
 
-function page_loader() {
-    $('.loading-area').fadeOut(2000)
-    setTimeout(()=>{
-        $('.loading-area').css('display','none')
-    },1500)
-};
-page_loader()
 
 $(document).on('submit','#newsletter_form',function (e){
     e.preventDefault();
@@ -769,6 +769,7 @@ jQuery(document).on('ready', function() {
         accrodion();
         mobileNavToggle();
         bootstrapAnimatedLayer();
+        page_loader();
     })(jQuery);
 });
 
