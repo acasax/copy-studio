@@ -63,7 +63,7 @@
             <p> ".$content."</p>
         </div>";
 
-       $send = $user->send_mail($user_email,$mailBody,"Copy Studio Krusevac");
+       $send = $user->send_mail($user_email,$mailBody,"Copy Studio Kruševac");
        if($send){
            $array = array();
            $array['type']= 'message';

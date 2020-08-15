@@ -358,7 +358,39 @@ function thmScrollAnim() {
 }
 
 
+const languages = {
+    'sr': {
+        'globalErrorMsg': "Nešto nije uredu. Pokušajte ponovo ili kontaktirajte nas.",
+        'nameRequired': "Unesite Vaše ime",
+        'nameMinLength': "Vaše ima mora da sadrži najmanje 2 slova",
+        'messageRequired': "Unesite poruku",
+        'messageMinLength': "Vaša poruka mora da sadrži najmanje 20 slova",
+        'emailRequired': "Unesite Vašu e adresu",
+        'emailValid': 'Vaša adresa nije validnog formata',
+        'secPartnerWelcome': "Kontaktiraćemo Vas u najkraćem vremenskom intervalu.",
+        'contactWelcome': 'Hvala Vam na interesovanju.',
+        'contactSecMsg': "Kontaktiraćemo Vas u najkraćem vremenskom intervalu.",
+    },
+    'en': {
+        'globalErrorMsg': "Something gose wrong.Try again or contact our services.",
+        'nameRequired': "Please enter your name",
+        'nameMinLength': "Your name must consist of at least 2 characters",
+        'messageRequired': "Please enter message",
+        'messageMinLength': "Your message must consist of at least 20 characters",
+        'emailRequired': "Please enter your email",
+        'secPartnerWelcome': "We will contact you in the shortest possible time.",
+        'contactWelcome': 'Thank you for your interest.',
+        'contactSecMsg': "We will contact you in the shortest possible time.",
+    }
+}
 
+
+const translate = (attribute)=>{
+    const href = window.location.href
+    let lang = 'sr'
+    if(href.includes('en')) lang = 'en';
+    return languages[lang][attribute]
+}
 
 
 
@@ -368,39 +400,7 @@ function contactFormValidation() {
 
 
 
-    const languages = {
-        'sr': {
-            'globalErrorMsg': "Nešto nije uredu. Pokušajte ponovo ili kontaktirajte nas.",
-            'nameRequired': "Unesite Vaše ime",
-            'nameMinLength': "Vaše ima mora da sadrži najmanje 2 slova",
-            'messageRequired': "Unesite poruku",
-            'messageMinLength': "Vaša poruka mora da sadrži najmanje 20 slova",
-            'emailRequired': "Unesite Vašu e adresu",
-            'emailValid': 'Vaša adresa nije validnog formata',
-            'secPartnerWelcome': "Kontaktiraćemo Vas u najkraćem vremenskom intervalu.",
-            'contactWelcome': 'Hvala Vam na interesovanju.',
-            'contactSecMsg': "Kontaktiraćemo Vas u najkraćem vremenskom intervalu.",
-        },
-        'en': {
-            'globalErrorMsg': "Something gose wrong.Try again or contact our services.",
-            'nameRequired': "Please enter your name",
-            'nameMinLength': "Your name must consist of at least 2 characters",
-            'messageRequired': "Please enter message",
-            'messageMinLength': "Your message must consist of at least 20 characters",
-            'emailRequired': "Please enter your email",
-            'secPartnerWelcome': "We will contact you in the shortest possible time.",
-            'contactWelcome': 'Thank you for your interest.',
-            'contactSecMsg': "We will contact you in the shortest possible time.",
-        }
-    }
 
-
-    const translate = (attribute)=>{
-        const href = window.location.href
-        let lang = 'sr'
-        if(href.includes('en')) lang = 'en';
-        return languages[lang][attribute]
-    }
 
 
     let language = void(0)
@@ -506,6 +506,124 @@ function contactFormValidation() {
 
     }
 }
+
+$(document).on('blur','#EMAIL',function (e){
+
+})
+
+/** CONTACT FORM SUBMIT / VALIDATION */
+if ($('#newsletter_form').length) {
+   const newsletterFormValidation =  $('#newsletter_form').validate({
+        errorPlacement: function(error,element) {
+            if(error) {
+              $('#newsletter_form').find('.mc4wp-form-fields').addClass('error')
+              return true
+            }
+            $('#newsletter_form').find('.mc4wp-form-fields').removeClass('error')
+            return true;
+        },
+        rules: {
+            EMAIL: {
+                required: true,
+                email: true
+            },
+            AGREE_TO_TERMS: {
+                required: true
+            },
+        },
+        messages: {
+            EMAIL: {
+                required: '',
+                email: ''
+            },
+            AGREE_TO_TERMS: {
+                required: ''
+            }
+        },
+        submitHandler: function submitHandler(form) {
+            $('.loading-area').css('display', 'block')
+            $(form).ajaxSubmit({
+                type: "POST",
+                dataType: "JSON",
+                url: "admin/newsletter.php",
+                method: 'POST',
+                data: {
+                  EMAIL: $('#EMAIL').val(),
+                  AGREE_TO_TERMS: $("#AGREE_TO_TERMS").val()
+                },
+                success: function (data) {
+                    var objResp = data;
+                    var str=objResp.type;
+                    if(str==='ERROR')
+                    {
+                        str=objResp.data;
+                        swal({
+                            title: "Greška!",
+                            text: str,
+                            timer: 2500,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            type: "error"
+                        });
+                        resetValidation()
+                        return;
+                    }
+
+                    if(str==='OK')
+                    {
+                        str=objResp.data;
+                        swal({
+                            title: "Uspešno!",
+                            text: str,
+                            timer: 2500,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            type: "success"
+                        });
+                        $('#newsletter_form')[0].reset();
+                        return;
+                    }
+
+                },
+                error: function error() {
+                    swal({
+                        title: "Error",
+                        text: translate('globalErrorMsg'),
+                        timer: 3000,
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                        type: "error"
+                    });
+                },
+                complete: function () {
+                    $('.loading-area').fadeOut(2000)
+                    setTimeout( ()=>{
+                        $('.loading-area').css('display', 'none')
+                    },1000)
+                }
+            });
+        }
+    });
+
+   const  resetValidation = ()=> {
+        newsletterFormValidation.resetForm()
+    }
+}
+
+function page_loader() {
+    $('.loading-area').fadeOut(2000)
+    setTimeout(()=>{
+        $('.loading-area').css('display','none')
+    },1500)
+};
+page_loader()
+
+$(document).on('submit','#newsletter_form',function (e){
+    e.preventDefault();
+    $.ajax({
+
+    })
+})
 
 function thmVideoPopup() {
     if ($('.video-popup').length) {

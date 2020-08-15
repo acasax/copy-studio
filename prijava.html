@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Copy Studio 88 | Prijava</title>
+  <link rel="icon" href="./img/logo-short.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="./img/logo-short.ico"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/fonts/iconic/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="plugins/css-hamburgers/hamburgers.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/animsition/css/animsition.min.css">
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link rel="stylesheet" href="dist/css/loginArea.css?A21312S" type="text/css" />
+  <meta name="theme-color" content="#DA97AB" />
+</head>
+<script type = "text/javascript" >
+    function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+    function inputFocus ($elem) {
+        $($elem).valid();
+        if($($elem).val() !== "" && $($elem).hasClass('has-val')) return
+        if(!$($elem).hasClass('has-val') || $($elem).hasClass('error')) {
+            $($elem).addClass('has-val');
+        }
+        else {
+            $($elem).removeClass('has-val');
+        }
+    }
+</script>
+<body>
+
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <form id="loginForm" class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Dobro došli
+					</span>
+        <span class="login100-form-title p-b-48">
+                      <img class="login-logo" src="./img/logo.png"/>
+					</span>
+
+
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+          <input class="input100" onfocus="inputFocus(this)" onblur="inputFocus(this)" type="text" name="loginemail" autocomplete="OFF">
+          <span class="focus-input100" data-placeholder="Email"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+          <input class="input100" onfocus="inputFocus(this)" onblur="inputFocus(this)" type="password" id="loginpassword" name="loginpassword" autocomplete="OFF">
+          <span class="focus-input100" data-placeholder="Password"></span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <button type="submit" class="login100-form-btn">
+              Login
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="loading-area">
+    <div class="loadingio-spinner-spinner-xkd27nljhuk"><div class="ldio-9r3gjr71qx5">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div></div>
+</div>
+
+<script src="plugins/jquery/jquery-3.2.1.min.js"></script>
+<script src="js/login.js"></script>
+<script src="plugins/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
+<script src="plugins/form-validation/jquery.form.js"></script>
+<script src="plugins/form-validation/jquery.validate.min.js"></script>
+</body>
+</html>

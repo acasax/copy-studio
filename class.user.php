@@ -20,7 +20,6 @@ class User
     function send_mail($email, $message, $subject)
     {
 
-
         $mail = new PHPMailer();
         $mail->IsSMTP();
         $mail->SMTPOptions = array(
@@ -30,6 +29,7 @@ class User
                 'allow_self_signed' => true
             )
         );
+        $mail->CharSet = 'UTF-8';
         //$mail->SMTPDebug  = 2;
        /*  $mail->SMTPSecure = "tls";  // ovo je za domen
         $mail->Host = "smtp.gmail.com";
@@ -38,11 +38,11 @@ class User
         $mail->SMTPSecure = "ssl";
         $mail->Host = "smtp.gmail.com";
         $mail->Port = 465;
-        $mail->AddAddress(""); //email unesi tvoj email
-        $mail->Username = ""; //email
-        $mail->Password = ""; //password
-        $mail->SetFrom($email, "Copy Studio 88 Kruševac");
-        $mail->AddReplyTo($email, "Copy Studio 88 Kruševac");
+        $mail->AddAddress($email); //email unesi tvoj email
+        $mail->Username = "stefan.milutinovic.rs@gmail.com"; //email
+        $mail->Password = "letiprase59!"; //password
+        $mail->SetFrom('stefan.milutinovic.rs@gmail.com', "Copy Studio 88 Kruševac");
+        $mail->AddReplyTo('stefan.milutinovic.rs@gmail.com', "Copy Studio 88 Kruševac");
         $mail->Subject = $subject;
         $mail->MsgHTML($message);
 
