@@ -610,6 +610,7 @@ if ($('#newsletter_form').length) {
     }
 }
 
+
 function page_loader() {
     $('.loading-area').fadeOut(2000)
     setTimeout(()=>{
