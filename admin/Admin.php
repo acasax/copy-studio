@@ -49,10 +49,10 @@ class Admin
         $mail->Host = "smtp.gmail.com";
         $mail->Port = 465;
         $mail->AddAddress($email); //email unesi tvoj email
-        $mail->Username = ""; //email
-        $mail->Password = ""; //password
-        $mail->SetFrom('stefan.milutinovic.rs@gmail.com', "Copy Studio 88 Kruševac");
-        $mail->AddReplyTo('stefan.milutinovic.rs@gmail.com', "Copy Studio 88 Kruševac");
+        $mail->Username = "resivojee@gmail.com"; //email
+        $mail->Password = "podlogazamis"; //password
+        $mail->SetFrom('acasax@gmail.com', "Copy Studio 88 Kruševac");
+        $mail->AddReplyTo('acasax@gmail.com', "Copy Studio 88 Kruševac");
         $mail->Subject = $subject;
         $mail->MsgHTML($message);
         if(!is_null($data)) {
