@@ -209,7 +209,7 @@ body.active-preloader-ovh {
 * 3. header styles
 ***************************/
 .header-navigation {
-  background-image: url("../img/pattern za belu pozadinu.png") !important;
+  background-image: url("../img/patern.png") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -259,7 +259,7 @@ body.active-preloader-ovh {
   .header-navigation ul.navigation-box {
     float: none;
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle;}
     .header-navigation ul.navigation-box li a .sub-nav-toggler {
       display: none; }
     .header-navigation ul.navigation-box > li {
@@ -757,6 +757,19 @@ body.active-preloader-ovh {
 
 @media (max-width: 1024px) {
   .mapa {
+    display: none !important;
+  }
+}
+
+.btn_nav {
+  float: right !important;
+  height: 130px;
+  line-height: 130px;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .btn_nav {
     display: none !important;
   }
 }
@@ -3099,14 +3112,10 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
   padding: 15px 0;
 }
 
-
-
-
-
 .fixed-contacts {
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 25%;
   margin-top: -2.5em;
   max-width: 200px;
   display: flex;
@@ -3128,7 +3137,7 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
 .fixed-contacts a {
   position: absolute;
   top:0;
-  right: -170px;
+  right: -530px;
   transition: all 0.8s ease-in-out;
 }
 
@@ -3136,13 +3145,13 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
   top:0;
 }
 .fixed-contacts a.viber{
-  top:45px;
+  top:110px;
 }
 .fixed-contacts a.mail{
-  top:90px;
+  top:220px;
 }
 .fixed-contacts a.facebook{
-  top:135px;
+  top:330px;
 }
 
 .fixed-contacts a.instagram:hover,
