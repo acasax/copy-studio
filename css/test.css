@@ -1,5 +1,6 @@
 .portfolio .portfolio-item {
     margin-bottom: 30px;
+
 }
 
 .portfolio #portfolio-flters {
@@ -12,6 +13,11 @@
 
 #portfolio .tab-content {
     padding: 30px 0px;
+    background-image: url(../img/patern.png) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    margin-bottom: 50px;
 }
 
 .portfolio #portfolio-flters li {

@@ -130,12 +130,12 @@ a:active {
     font-size: 20px; }
   .sec-title h3 {
     margin: 0;
-    color: #212121;
+    color: #9c2489;
     font-size: 60px;
     font-weight: bold;
     margin-bottom: 30px; }
   .sec-title p {
-    color: #757575;
+    color: #9c2489;
     font-size: 20px;
     line-height: 32px;
     margin: 0; }
@@ -1493,9 +1493,10 @@ body.active-preloader-ovh {
         padding-top: 55px;
         padding-bottom: 80px;
         padding-right: 67px;
-        width: 100%; }
+        width: 100%;
+        background: #7d7b7d}
         .team-section .single-team-carousel .inner .team-content .title {
-          margin-bottom: 42px; }
+          margin-bottom: 10px; }
           .team-section .single-team-carousel .inner .team-content .title span,
           .team-section .single-team-carousel .inner .team-content .title h3 {
             margin: 0; }
@@ -1504,14 +1505,14 @@ body.active-preloader-ovh {
             font-size: 20px;
             color: #9c2489; }
           .team-section .single-team-carousel .inner .team-content .title h3 {
-            color: #212121;
+            color: white;
             font-size: 40px;
             font-weight: bold; }
         .team-section .single-team-carousel .inner .team-content p {
           font-size: 16px;
           line-height: 30px;
           margin: 0;
-          color: #757575; }
+          color: white; }
           .team-section .single-team-carousel .inner .team-content p + p {
             margin-top: 30px; }
 
@@ -2237,11 +2238,14 @@ body.active-preloader-ovh {
 * 21. page title styles
 ***************************/
 .page-title {
-  background: #F5F6FA;
-  padding: 79px 0; }
+  background-image: url("../img/slike/ljubicasta.png");
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  padding: 60px 0; }
   .page-title h3 {
     margin: 0;
-    color: #9c2489;
+    color: white;
     font-size: 60px;
     font-weight: bold; }
 
