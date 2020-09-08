@@ -115,11 +115,9 @@ a:active {
     background: #fff;
     color: #9c2489; }
   .thm-btn.grey-bg {
-    background: #a09fa2;
-    color: #ffffff; }
-    .thm-btn.grey-bg:hover {
-      background: #9c2489;
-      color: #fff; }
+    background: #9c2489;
+    color: #fff; }
+
 
 .sec-title {
   margin-top: -8px;
@@ -747,12 +745,14 @@ body.active-preloader-ovh {
 ***************************/
 .mapa {
   background-image: url("../img/mapa.png") !important;
+  display: block;
+}
+
+.mapa img {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   width: 100%;
-  height: 325px;
-  display: block;
 }
 
 @media (max-width: 1024px) {
@@ -762,10 +762,9 @@ body.active-preloader-ovh {
 }
 
 .btn_nav {
-  float: right !important;
-  height: 130px;
-  line-height: 130px;
-  display: block;
+  position: absolute;
+  top: 20%;
+  right: 40px;
 }
 
 @media (max-width: 1024px) {
@@ -2155,18 +2154,26 @@ body.active-preloader-ovh {
     font-size: 20px;
     color: #9c2489; }
   .contact-section .title h2 {
-    color: #212121;
-    font-size: 60px;
+    color: #9c2489;
+    font-size: 55px;
     line-height: 60px;
-    font-weight: bold; }
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .single-contact-info span {
+    font-size: 25px;
+  }
 .contact-section .contact-form-content {
-  background: #F5F6FA;
+  background-image: url("../img/pattern za belu pozadinu.png");
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
   padding: 80px 0;
   padding-left: 80px;
   padding-right: 80px; }
 .contact-section .contact-info {
   margin-left: -30px;
-  border: 2px solid #EBEDF4;
   padding-top: 75px;
   padding-bottom: 80px; }
   .contact-section .contact-info .single-contact-info + .single-contact-info {
@@ -2174,7 +2181,7 @@ body.active-preloader-ovh {
   .contact-section .contact-info .single-contact-info h4, .contact-section .contact-info .single-contact-info p {
     margin: 0; }
   .contact-section .contact-info .single-contact-info h4 {
-    color: #212121;
+    color: #9c2489;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px; }
@@ -2213,7 +2220,9 @@ body.active-preloader-ovh {
   font-size: 16px;
   padding-left: 50px;
   margin-bottom: 20px;
-  display: block; }
+  display: block;
+  border: 1px solid #757575;
+  }
   .contact-section .contact-form input::-webkit-input-placeholder, .contact-section .contact-form textarea::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #757575; }
@@ -3141,7 +3150,7 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
 .fixed-contacts a {
   position: absolute;
   top:0;
-  right: -530px;
+  right: -690px;
   transition: all 0.8s ease-in-out;
 }
 

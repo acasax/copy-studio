@@ -1365,7 +1365,7 @@ button, input, select, textarea {
 }
 
 a {
-    color: #337ab7;
+    color: #757575;
     text-decoration: none
 }
 
@@ -1391,7 +1391,8 @@ img {
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
     display: block;
     max-width: 100%;
-    height: auto
+    height: auto;
+    width: 100%;
 }
 
 .img-rounded {
