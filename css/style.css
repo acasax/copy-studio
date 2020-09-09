@@ -3128,7 +3128,7 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
 .fixed-contacts {
   position: fixed;
   right: 0;
-  top: 15%;
+  top: 21%;
   margin-top: -2.5em;
   max-width: 200px;
   display: flex;
@@ -3150,7 +3150,7 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
 .fixed-contacts a {
   position: absolute;
   top:0;
-  right: -690px;
+  right: -480px;
   transition: all 0.8s ease-in-out;
 }
 
@@ -3158,13 +3158,13 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
   top:0;
 }
 .fixed-contacts a.viber{
-  top:110px;
+  top:90px;
 }
 .fixed-contacts a.mail{
-  top:220px;
+  top:180px;
 }
 .fixed-contacts a.facebook{
-  top:330px;
+  top:270px;
 }
 
 .fixed-contacts a.instagram:hover,
