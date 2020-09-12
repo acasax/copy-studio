@@ -744,8 +744,8 @@ body.active-preloader-ovh {
 * 7. brand styles
 ***************************/
 .mapa {
-  background-image: url("../img/mapa.png") !important;
   display: block;
+  margin-bottom: -32px;
 }
 
 .mapa img {
