@@ -3150,7 +3150,7 @@ body .mc4wp-form .mc4wp-form-fields a:hover {
 .fixed-contacts a {
   position: absolute;
   top:0;
-  right: -480px;
+  right: -340px;
   transition: all 0.8s ease-in-out;
 }
 
