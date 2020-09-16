@@ -1,5 +1,11 @@
 @media (max-width: 1366px) {
-	.header-navigation ul.navigation-box > li::before {margin-left: 20px;margin-right: 20px;}
+    .header-navigation ul.navigation-box > li::before {margin-left: 20px;margin-right: 20px;}
+}
+
+@media (max-width: 1370px) {
+    .contact-infos-root > .contact-infos-one-div {
+       font-size: 18px !important;
+    }
 }
 
 @media(max-width: 1024px) {
@@ -348,8 +354,14 @@
         display: none;
     }
 
+    .contact-infos-one-div {
+        flex-direction: column;
+        justify-content: start;
+    }
 
-
+    .contact-infos-one-div > div{
+        width: 100%;
+    }
 }
 
 @media (max-width: 414px) {
