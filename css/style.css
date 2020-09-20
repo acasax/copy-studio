@@ -156,8 +156,8 @@ a:active {
   box-shadow: 0px 23px 42px rgba(0, 0, 0, 0.2);
   transition: all .4s ease; }
   .scroll-to-top:hover {
-    background: #FEC931;
-    color: #212121; }
+    background: #9c2489;
+    color: #fff; }
 
 /*
 ****
@@ -3074,7 +3074,7 @@ body.active-preloader-ovh {
 }
 
 .mc4wp-form .mc4wp-form-fields input[type="email"] {
-  padding: 1em 8em 1em 1.6em;
+  padding: 1em 11.5em  1em 1.6em;
   width: 100%;
   vertical-align: top;
   -webkit-box-sizing: border-box;
