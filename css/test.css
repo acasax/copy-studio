@@ -23,9 +23,9 @@
 .portfolio #portfolio-flters li {
     display: inline-block;
     vertical-align: middle;
-    width: 18%;
+    width: 100%;
     padding: 0 1px;
-    margin: 0;
+    margin: 10px 0;
     list-style: none;
     cursor: pointer;
   /*  font-size: 20px;
