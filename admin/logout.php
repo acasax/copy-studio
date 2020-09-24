@@ -7,13 +7,13 @@ $user = new Admin();
 
 if(!$user->is_logged_in())
 {
-	$user->redirect('../prijava');
+	$user->redirect('welcome.php');
 }
 
 if($user->is_logged_in()!="")
 {
 	$user->logout();
-	$user->redirect('../prijava');
+	$user->redirect('welcome.php');
 }
 exit();
 ?>

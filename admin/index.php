@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 /**
  * Created by PhpStorm.
@@ -13,14 +15,14 @@ $user_home = new Admin();
 
 
 
-if (!isset($_SESSION['userSession'])) {
+/*if (!isset($_SESSION['userSession'])) {
     $user_home->logout();
-    $user_home->redirect('../prijava');
+    $user_home->redirect('../welcome.php');
 }
 
 if (!$user_home->is_logged_in()) {
     $user_home->redirect('../prijava');
-}
+}*/
 
 $account_id = $_SESSION['userSession'];
 
@@ -32,10 +34,6 @@ if ($role !== "admin") {
 
 
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

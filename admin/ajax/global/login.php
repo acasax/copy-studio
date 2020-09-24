@@ -52,7 +52,7 @@
             $url = '';
             switch($role){
                case 'super_admin': $url = 'super_admin/index.php';break;
-               case 'admin': $url = 'admin/index.php';break;
+               case 'admin': $url = 'admin/welcome.php';break;
             }
             echo json_encode(
              array(

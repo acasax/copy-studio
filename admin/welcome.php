@@ -12,7 +12,7 @@
       <div class="container h-100">
           <div class="row h-100 justify-content-between align-items-center">
               <div class="c-card col-3">
-                  <a href="">
+                  <a href="index.php">
                       <div class="row h-100 justify-content-end align-items-center">
                           <i class="fas fa-users"></i>
                           <h1>Novosti</h1>
@@ -20,7 +20,7 @@
                   </a>
               </div>
               <div class="c-card bcg-card col-3">
-                  <a href="">
+                  <a href="tickets/index.php">
                       <div class="row h-100 justify-content-end align-items-center">
                           <i class="fas fa-tag"></i>
                           <h1>Kuponi</h1>
