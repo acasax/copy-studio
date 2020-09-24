@@ -108,6 +108,7 @@ a:hover, a:visited, a:focus, a:active {
     display: flex;
 }
 
+
 .portfolio .portfolio-wrap .portfolio-info {
     display: flex;
     justify-content: center;
@@ -168,4 +169,17 @@ a:hover, a:visited, a:focus, a:active {
 
 .portfolio .portfolio-wrap:hover img {
     transform: scale(1.1);
+}
+
+
+@media(max-width: 768px) {
+    .portfolio .portfolio-wrap img {
+        width: 100%;
+    }
+    
+
+    .portfolio .portfolio-item {
+        width: 100%;
+    }
+    
 }
