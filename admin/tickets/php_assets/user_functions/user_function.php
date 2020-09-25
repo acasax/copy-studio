@@ -21,8 +21,6 @@ if (isset($_POST["order"])) {
 } else {
     $query .= 'ORDER BY customers.id DESC ';
 }
-echo $query;
-
 
 $stmt = $db->prepare($query);
 $stmt->execute();
@@ -36,14 +34,14 @@ $filtered_rows = $stmt->rowCount();
 foreach ($result as $row) {
 
     $sub_array = array();
-    $sub_array[] = $row["id"];
+    $img = "php_assets/user_functions/image/" . $row["picture"];
     $sub_array[] = $row["ticket_number"];
+    $sub_array[] = '<img src="' . $img . '" class="custom_img">';
     $sub_array[] = $row["first_name"];
     $sub_array[] = $row["last_name"];
     $sub_array[] = $row["phone"];
     $sub_array[] = $row["e-mail"];
     $sub_array[] = $row["institution"];
-    //$sub_array[] = '<img src="' . $img . '" class="custom_img">';
     $sub_array[] = '<button type="button" name="update" id="' . $row["id"] . '" class="w-100 h-100 update" style="background: none; border: none; margin: auto; text-align: center;" title="Change" ><i class="fas fa-user-edit"></i></button>';
     $sub_array[] = '<button type="button" name="delete" id="' . $row["id"] . '" class="w-100 h-100 delete" style="background: none; border: none; margin: auto; text-align: center;" title="Delete" ><i class="fas fa-trash"></i></button>';
 

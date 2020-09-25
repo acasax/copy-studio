@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#add_button').click(function() {
-        $('#user_data')[0].reset();
+        $('#user_form')[0].reset();
         $('.modal-title').text("Unos");
         $('#image').val("");
         $('#imagelabel').text("");
@@ -41,32 +41,61 @@ $(document).ready(function() {
 
     });
 
-    const $galleryForm = $('#gallery_form')
+    const $userForm = $('#user_form')
     let validator = void(0)
 
-    if ($galleryForm.length) {
-        validator = $galleryForm.validate({
+    if ($userForm.length) {
+        validator = $userForm.validate({
             rules: {
-                txt_title: {
+                txt_ticket_number: {
+                    required: true,
+                },
+                txt_name: {
+                    required: true
+                },
+                txt_last_name: {
+                    required: true,
+                },
+                txt_phone: {
+                    required: true
+                },
+                txt_email: {
+                    required: true
+                },
+                txt_institution: {
                     required: true,
                 },
                 image: {
-                    required: true
+                    required: true,
                 }
-
             },
             messages: {
-                txt_title: {
-                    required: 'Insert title',
+                txt_ticket_number: {
+                    required: "Unesite broj kupona",
+                },
+                txt_name: {
+                    required: "Unesite ime korisnika",
+                },
+                txt_last_name: {
+                    required: "Unesite prezime korisnika",
+                },
+                txt_phone: {
+                    required: "Unesite broj korisnika",
+                },
+                txt_email: {
+                    required: "Unesite email korisnika",
+                },
+                txt_institution: {
+                    required: "Unesite instituciju",
                 },
                 image: {
-                    required: "Chose file"
+                    required: "Izaberite sliku"
                 }
             },
             submitHandler: function submitHandler(form) {
                 event.preventDefault();
                 $.ajax({
-                    url: "php_assets/gallery_function/gallery_func.php",
+                    url: "php_assets/user_functions/user_func.php",
                     method: 'POST',
                     data: new FormData(form),
                     processData: false,
@@ -90,7 +119,7 @@ $(document).ready(function() {
                                 showConfirmButton: false,
                                 type: "error"
                             });
-                            $('#gallery_form')[0].reset();
+                            $('#user_form')[0].reset();
                             return;
                         }
 
@@ -104,7 +133,7 @@ $(document).ready(function() {
                                 showConfirmButton: false,
                                 type: "success"
                             });
-                            $('#gallery_form')[0].reset();
+                            $('#user_form')[0].reset();
                             $('#exampleModalCenter').modal('hide');
                             dataTable.ajax.reload();
                         }
@@ -115,20 +144,6 @@ $(document).ready(function() {
         })
     }
 
-
-    NUMBER_CONTROL_INPUT = function(e) {
-        let value = e.value
-        if (!value) return;
-        const globalRegex = RegExp('^[0-9]+$', 'g');
-        if (!globalRegex.test(value)) {
-            e.value = ''
-            return
-        }
-        $(e).valid()
-    }
-
-
-
     $(document).on('click', '#dismiss-modal, button[data-dismiss="modal"]', function() {
         validator.resetForm();
     })
@@ -137,18 +152,23 @@ $(document).ready(function() {
     $(document).on('click', '.update', function() {
         let gallery_id = $(this).attr("id");
         $.ajax({
-            url: "php_assets/gallery_function/gallery_fetch_single.php",
+            url: "php_assets/user_functions/user_fetch_single.php",
             method: "POST",
-            data: { gallery_id: gallery_id },
+            data: { user_id: user_id },
             dataType: "json",
             success: function(data) {
-                $('#gallery_form')[0].reset();
+                $('#user_form')[0].reset();
                 $('#exampleModalCenter').modal('show');
-                $('#txt_title').val(data.title);
-                $('.custom-file-label').text(data.name);
+                $('#txt_ticket_number').val(data.tNumber);
+                $('#txt_name').val(data.name);
+                $('#txt_last_name').val(data.lName);
+                $('#txt_phone').val(data.phone);
+                $('#txt_email').val(data.email);
+                $('#txt_institution').val(data.institution);
+                $('.custom-file-label').text(data.picture);
                 $('.modal-title').text("Change");
-                $('#image').val(data.name);
-                $('#id').val(gallery_id);
+                $('#image').val(data.picture);
+                $('#id').val(user_id);
                 $('#action').val("Promeni");
                 $('#operation').val("Promeni");
             }
@@ -158,21 +178,21 @@ $(document).ready(function() {
 
 
     $(document).on('click', '.delete', function() {
-        let gallery_id = $(this).attr("id");
+        let user_id = $(this).attr("id");
         swal({
-            title: "Are you sure you want to delete this image?",
+            title: "Da li ste sigurni da želite da obrišete ovog korisnika?",
             type: "error",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes",
-            cancelButtonText: "No",
+            confirmButtonText: "Da",
+            cancelButtonText: "Ne",
             closeOnConfirm: false
         }, function(isConfirm) {
             if (!isConfirm) return;
             $.ajax({
-                url: "php_assets/gallery_function/gallery_delete.php",
+                url: "php_assets/user_functions/user_delete.php",
                 method: "POST",
-                data: { gallery_id: gallery_id },
+                data: { user_id: user_id },
                 success: function(data) {
                     let objResp = JSON.parse(data);
                     let str = objResp.type;

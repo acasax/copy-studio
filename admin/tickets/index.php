@@ -31,6 +31,7 @@
             <thead class="thead-dark">
             <tr>
                 <th>Broj kupona</th>
+                <th>Slika</th>
                 <th>Ime</th>
                 <th>Prezime</th>
                 <th>Telefon</th>
@@ -57,6 +58,11 @@
             </div>
             <div class="modal-body">
                 <form method="post" id="user_form" enctype="multipart/form-data">
+                    <label class="control-label">Izaberi sliku</label>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="image" id="imagelabel"></label>
+                        <input type="file" accept="image/*" name="image" id="image" onblur="$(this).valid()"  class="custom-file-input" placeholder="" >
+                    </div>
                     <div class="form-group">
                         <label class="control-label">Unesi broj kupona</label>
                         <input type="text" name="txt_ticket_number" id="txt_ticket_number"  onblur="$(this).valid()" class="form-control" placeholder="" required autofocus>
@@ -71,7 +77,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Unesi broj telefona</label>
-                        <input type="text" name="txt_phone" id="txt_phone" onkeydown="PHONE_NUMBER_INPUT(this)"  onblur="$(this).valid()" class="form-control" placeholder="" required>
+                        <input type="text" name="txt_phone" id="txt_phone"   onblur="$(this).valid()" class="form-control" placeholder="" required>
                         <p class="blockquote-footer">(xxx)xxx-xxx</p>
                     </div>
                     <div class="form-group">
@@ -98,10 +104,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <script type="application/javascript">
-        $('input[type="file"]').change(function(e){
-            var fileName = e.target.files[0].name;
-            $('.custom-file-label').html(fileName);
-        });
+        $('input[type="file"]').onchange={
+            (e) =>
+            let fileName = e.target.files[0].name;
+             $('.custom-file-label').html(fileName);
+        }
+
     </script>
 
     <script type="text/javascript" language="javascript" src="assets/js/user.js" ></script>

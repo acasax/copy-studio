@@ -8,13 +8,17 @@ if (isset($_POST["operation"])) {
     $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp', 'pdf', 'doc', 'ppt');
     if ($_POST["operation"] === "Dodaj") {
 
-        $title = $_POST['txt_title'];
         $img = $_FILES['image']['name'];
-        $text = $_POST['txt_text'];
+        $tNumber = $_POST['txt_ticket_number'];
+        $name = $_POST['txt_name'];
+        $lName = $_POST['txt_last_name'];
+        $phone = $_POST['txt_phone'];
+        $email = $_POST['txt_email'];
+        $institution = $_POST['txt_institution'];
 
-        //pretvori ga u funkciju
+
         $db->exec("set names utf8");
-        $get_img_name_sql1 = "SELECT * FROM blog WHERE image_name = '$img'";
+        $get_img_name_sql1 = "SELECT * FROM customers WHERE picture = '$img'";
         $get_img_name1 = $db->prepare($get_img_name_sql1);
         $get_img_name1->execute();
         $row = $get_img_name1->fetch(PDO::FETCH_ASSOC);
@@ -28,24 +32,28 @@ if (isset($_POST["operation"])) {
                     $targetPath = "image/".$_FILES['image']['name'];
                     if (move_uploaded_file($sourcePath, $targetPath)) {
                         $stmt = $db->prepare("
-                                INSERT INTO `blog`(`title`, `image_name`, `text`) 
-                                VALUES (:title, :name, :text)
+                                INSERT INTO `customers` ( `picture`, `ticket_number`, `name`, `last_name`, `phone`, `e-mail`, `institution`)
+                                 VALUES ( :picture, :tNumber, :name, :lName, :phone, :email, :institutio);
                             ");
                         $result = $stmt->execute(
                             array(
-                                ':title' => $_POST["txt_title"],
-                                ':name' => $img,
-                                ':text' => $text
+                                ':tNumber' => $tNumber,
+                                ':name' => $name,
+                                ':lName' => $lName,
+                                ':phone' => $phone,
+                                ':email' => $email,
+                                ':institutio' => $institution,
+                                ':picture'   => $img
                             )
                         );
-                        $user_class->returnJSON("OK", "Successfully insert blog.");
+                        $user_class->returnJSON("OK", "Uspešno ste dodali korisnika.");
                         return;
                     }
                 }
             }
         }
         else {
-            $user_class->returnJSON('ERROR', "Image with this name already exist.");
+            $user_class->returnJSON('ERROR', "Slika sa ovim nazivom već postoji.");
             return;
         }
     }
@@ -76,5 +84,4 @@ if (isset($_POST["operation"])) {
             return;
         }
     }
-
 }
