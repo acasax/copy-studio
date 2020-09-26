@@ -60,12 +60,12 @@
                 <form method="post" id="user_form" enctype="multipart/form-data">
                     <label class="control-label">Izaberi sliku</label>
                     <div class="custom-file">
-                        <label class="custom-file-label" for="image" id="imagelabel"></label>
-                        <input type="file" accept="image/*" name="image" id="image" onblur="$(this).valid()"  class="custom-file-input" placeholder="" >
+                        <input type="file" onblur="$(this).valid()" id="image" name="image" class="custom-file-input" data-buttonText="Ubaci" required autofocus/>
+                        <label class="custom-file-label" for="image" id="imageLabel"></label>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Unesi broj kupona</label>
-                        <input type="text" name="txt_ticket_number" id="txt_ticket_number"  onblur="$(this).valid()" class="form-control" placeholder="" required autofocus>
+                        <input type="text" name="txt_ticket_number" id="txt_ticket_number"  onblur="$(this).valid()" class="form-control" placeholder="" required >
                     </div>
                     <div class="form-group">
                         <label class="control-label">Unesi ime</label>
@@ -103,14 +103,15 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-    <script type="application/javascript">
-        $('input[type="file"]').onchange={
-            (e) =>
-            let fileName = e.target.files[0].name;
-             $('.custom-file-label').html(fileName);
-        }
-
+    <script>
+        $('#image').on('change',function(e){
+            //get the file name
+            var fileName = e.target.files[0].name;
+            //replace the "Choose a file" label
+            $('#imageLabel').text(fileName);
+        })
     </script>
+
 
     <script type="text/javascript" language="javascript" src="assets/js/user.js" ></script>
     <script type="text/javascript" language="javascript" src="assets/vendor/swall/sweetalert.js" ></script>

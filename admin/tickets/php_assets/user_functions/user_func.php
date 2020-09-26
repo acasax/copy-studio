@@ -32,18 +32,18 @@ if (isset($_POST["operation"])) {
                     $targetPath = "image/".$_FILES['image']['name'];
                     if (move_uploaded_file($sourcePath, $targetPath)) {
                         $stmt = $db->prepare("
-                                INSERT INTO `customers` ( `picture`, `ticket_number`, `name`, `last_name`, `phone`, `e-mail`, `institution`)
-                                 VALUES ( :picture, :tNumber, :name, :lName, :phone, :email, :institutio);
+                                INSERT INTO `customers` ( `picture`, `ticket_number`, `first_name`, `last_name`, `phone`, `e-mail`, `institution`)
+                                 VALUES ( :picture, :ticket_number, :first_name, :last_name, :phone, :email, :institutio);
                             ");
                         $result = $stmt->execute(
                             array(
-                                ':tNumber' => $tNumber,
-                                ':name' => $name,
-                                ':lName' => $lName,
+                                ':picture'   => $img,
+                                ':ticket_number' => $tNumber,
+                                ':first_name' => $name,
+                                ':last_name' => $lName,
                                 ':phone' => $phone,
                                 ':email' => $email,
                                 ':institutio' => $institution,
-                                ':picture'   => $img
                             )
                         );
                         $user_class->returnJSON("OK", "Uspešno ste dodali korisnika.");

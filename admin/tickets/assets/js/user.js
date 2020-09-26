@@ -64,9 +64,6 @@ $(document).ready(function() {
                 },
                 txt_institution: {
                     required: true,
-                },
-                image: {
-                    required: true,
                 }
             },
             messages: {
@@ -87,9 +84,6 @@ $(document).ready(function() {
                 },
                 txt_institution: {
                     required: "Unesite instituciju",
-                },
-                image: {
-                    required: "Izaberite sliku"
                 }
             },
             submitHandler: function submitHandler(form) {
@@ -150,7 +144,7 @@ $(document).ready(function() {
 
 
     $(document).on('click', '.update', function() {
-        let gallery_id = $(this).attr("id");
+        let user_id = $(this).attr("id");
         $.ajax({
             url: "php_assets/user_functions/user_fetch_single.php",
             method: "POST",
@@ -166,8 +160,7 @@ $(document).ready(function() {
                 $('#txt_email').val(data.email);
                 $('#txt_institution').val(data.institution);
                 $('.custom-file-label').text(data.picture);
-                $('.modal-title').text("Change");
-                $('#image').val(data.picture);
+                $('.modal-title').text("Promeni");
                 $('#id').val(user_id);
                 $('#action').val("Promeni");
                 $('#operation').val("Promeni");
