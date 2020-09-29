@@ -25,12 +25,12 @@ $(document).ready(function() {
         "language": {
             "lengthMenu": "Prikazi maks 5 korisnika po strani",
             "zeroRecords": "zero records",
-            "info": "Show page _PAGE_ od _PAGES_",
+            "info": "_PAGE_. strana od _PAGES_ strana",
             "infoEmpty": "No records available",
             "infoFiltered": "(Show _MAX_ of all image)",
             "loadingRecords": "Loading...",
             "processing": "Loading",
-            "search": "Search:",
+            "search": "Pretraga:",
             "paginate": {
                 "first": "First",
                 "last": "Last",
@@ -64,6 +64,9 @@ $(document).ready(function() {
                 },
                 txt_institution: {
                     required: true,
+                },
+                txt_points: {
+                    required: true,
                 }
             },
             messages: {
@@ -84,6 +87,9 @@ $(document).ready(function() {
                 },
                 txt_institution: {
                     required: "Unesite instituciju",
+                },
+                txt_points: {
+                    required: "Unesite trenutni broj poena",
                 }
             },
             submitHandler: function submitHandler(form) {
@@ -160,8 +166,8 @@ $(document).ready(function() {
                 $('#txt_email').val(data.email);
                 $('#txt_institution').val(data.institution);
                 $('.custom-file-label').text(data.picture);
+                $('#user_id').val(data.id);
                 $('.modal-title').text("Promeni");
-                $('#id').val(user_id);
                 $('#action').val("Promeni");
                 $('#operation').val("Promeni");
             }

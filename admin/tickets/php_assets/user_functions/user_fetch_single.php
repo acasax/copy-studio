@@ -10,6 +10,7 @@ if (isset($_POST["user_id"])) {
     );
     $stmt->execute();
     $result = $stmt->fetch();
+    $output["id"] = $result['id'];
     $output["picture"] = $result['picture'];
     $output["tNumber"] = $result['ticket_number'];
     $output["name"] = $result['first_name'];

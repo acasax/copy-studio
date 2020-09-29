@@ -37,6 +37,8 @@
                 <th>Telefon</th>
                 <th>E-mail</th>
                 <th>Ustanova</th>
+                <th>Trenutni broj poena</th>
+                <th style="width: 5%"></th>
                 <th style="width: 5%"></th>
                 <th style="width: 5%"></th>
             </tr>
@@ -60,7 +62,7 @@
                 <form method="post" id="user_form" enctype="multipart/form-data">
                     <label class="control-label">Izaberi sliku</label>
                     <div class="custom-file">
-                        <input type="file" onblur="$(this).valid()" id="image" name="image" class="custom-file-input" data-buttonText="Ubaci" required autofocus/>
+                        <input type="file" onblur="$(this).valid()" id="image" name="image" class="custom-file-input" data-buttonText="Ubaci" autofocus/>
                         <label class="custom-file-label" for="image" id="imageLabel"></label>
                     </div>
                     <div class="form-group">
@@ -88,6 +90,10 @@
                     <div class="form-group">
                         <label class="control-label">Unesi naziv institucije</label>
                         <input type="text" name="txt_institution" id="txt_institution"  onblur="$(this).valid()" class="form-control" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Unesi trenutni broj poena</label>
+                        <input type="text" name="txt_points" id="txt_points"  onblur="$(this).valid()" class="form-control" placeholder="" required>
                     </div>
 
             </div>
