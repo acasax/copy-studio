@@ -43,7 +43,7 @@ foreach ($result as $row) {
     $sub_array[] = $row["e-mail"];
     $sub_array[] = $row["institution"];
     $sub_array[] = $row["sum_points"];
-    $sub_array[] = '<button type="button" name="explore" id="' . $row["id"] . '" class="w-100 h-100 explore" style="background: none; border: none; margin: auto; text-align: center;" title="Profil korisnika" ><i class="far fa-file"></i></button>';
+    $sub_array[] = '<button type="button" name="explore" id="' . $row["id"] . '" class="w-100 h-100 explore" style="background: none; border: none; margin: auto; text-align: center;" title="Profil korisnika" ><a href="user_profile.php?var=' . $row["id"] . '"><i class="far fa-file"></i></a></button>';
     $sub_array[] = '<button type="button" name="update" id="' . $row["id"] . '" class="w-100 h-100 update" style="background: none; border: none; margin: auto; text-align: center;" title="Izmena" ><i class="fas fa-user-edit"></i></button>';
     $sub_array[] = '<button type="button" name="delete" id="' . $row["id"] . '" class="w-100 h-100 delete" style="background: none; border: none; margin: auto; text-align: center;" title="Brisanje" ><i class="fas fa-trash"></i></button>';
 
