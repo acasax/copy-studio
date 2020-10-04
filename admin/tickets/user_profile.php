@@ -1,4 +1,7 @@
-<?php include "connection.php" ?>
+<?php
+    include "connection.php";
+    session_start();
+    $_SESSION["id"] = $_GET["var"];?>
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -55,17 +58,17 @@
                 echo '
                     <tbody>
                         <tr>
-                            <th scope="row" id="idbre">' . $result['id'] . '</th>
-                            <th scope="row"><img class="custom_img" src="' .$img.'" alt=""></th>
-                            <th scope="row">' . $result['ticket_number'] . '</th>
-                            <th scope="row">' . $result['first_name'] . '</th>
-                            <th scope="row">' . $result['last_name'] . '</th>
-                            <th scope="row">' . $result['phone'] . '</th>
-                            <th scope="row">' . $result['e-mail'] . '</th>
-                            <th scope="row">' . $result['institution'] . '</th>
-                            <th scope="row">' . $result['sum_points'] . '</th>
-                            <th scope="row">' . $points . '</th>
-                            <th scope="row">' . $ticke . '</th>
+                            <td scope="row" id="idbre">' . $result['id'] . '</td>
+                            <td scope="row"><img class="custom_img" src="' .$img.'" alt=""></td>
+                            <td scope="row">' . $result['ticket_number'] . '</td>
+                            <td scope="row">' . $result['first_name'] . '</td>
+                            <td scope="row">' . $result['last_name'] . '</td>
+                            <td scope="row">' . $result['phone'] . '</td>
+                            <td scope="row">' . $result['e-mail'] . '</td>
+                            <td scope="row">' . $result['institution'] . '</td>
+                            <td scope="row">' . $result['sum_points'] . '</td>
+                            <td scope="row">' . $points . '</td>
+                            <td scope="row">' . $ticke . '</td>
                         </tr>
                     </tbody>';
                 ?>

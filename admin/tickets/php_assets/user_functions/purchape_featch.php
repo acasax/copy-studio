@@ -6,21 +6,14 @@ include "functions.php";
 
 $query = '';
 $output = array();
-$query .= "SELECT * FROM `purchase`";
-
-if (isset($_POST["search"]["value"])) {
-    $query .= ' WHERE purchase.price LIKE "%' . $_POST["search"]["value"] . '%" ';
-    $query .= 'OR purchase.description LIKE "%' . $_POST["search"]["value"] . '%" ';
-    $query .= 'OR purchase.date LIKE "%' . $_POST["search"]["value"] . '%" ';
-    $query .= 'AND purchase.fk_customer_id LIKE "%' . $_POST["search"]["value"] . '%" ';
-}
+session_start();
+$query .= 'SELECT * FROM `purchase` WHERE purchase.fk_customer_id = ' .  $_SESSION["id"] . ' ';
 
 if (isset($_POST["order"])) {
     $query .= 'ORDER BY ' . $_POST['order']['0']['column'] . ' ' . $_POST['order']['0']['dir'] . ' ';
 } else {
     $query .= 'ORDER BY purchase.id DESC ';
 }
-
 $stmt = $db->prepare($query);
 $stmt->execute();
 

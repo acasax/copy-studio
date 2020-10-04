@@ -4,6 +4,7 @@ $(document).ready(function() {
         "processing":true,
         "serverSide": true,
         "autoWidth": false,
+        "searching": false,
         "order": [],
         "ajax": {
             url: "php_assets/user_functions/purchape_featch.php",
@@ -21,7 +22,7 @@ $(document).ready(function() {
             "infoFiltered": "",
             "loadingRecords": "Loading...",
             "processing": "Loading",
-            "search": "Pretraga:",
+            "search": "",
             "paginate": {
                 "first": "First",
                 "last": "Last",

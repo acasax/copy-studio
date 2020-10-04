@@ -62,34 +62,36 @@ if (isset($_POST["operation"])) {
     }
 
     if ($_POST["operation"] == "Promeni") {
+        if($img != ""){
+            $db->exec("set names utf8");
+            $get_img_name_sql1 = "SELECT * FROM customers WHERE picture = '$img'";
+            $get_img_name1 = $db->prepare($get_img_name_sql1);
+            $get_img_name1->execute();
+            $row = $get_img_name1->fetch(PDO::FETCH_ASSOC);
+            $num_of_img_name = $get_img_name1->rowCount();
 
-        $db->exec("set names utf8");
-        $get_img_name_sql1 = "SELECT * FROM customers WHERE picture = '$img'";
-        $get_img_name1 = $db->prepare($get_img_name_sql1);
-        $get_img_name1->execute();
-        $row = $get_img_name1->fetch(PDO::FETCH_ASSOC);
-        $num_of_img_name = $get_img_name1->rowCount();
-
-        if ($num_of_img_name != 0){
-            if(is_array($_FILES)) {
-                if(is_uploaded_file($_FILES['image']['tmp_name'])) {
-                    $sourcePath = $_FILES['image']['tmp_name'];
-                    $targetPath = "image/".$_FILES['image']['name'];
-                    if (move_uploaded_file($sourcePath, $targetPath)) {
-                        $update_image_sql = "UPDATE `customers` SET `picture` = '$img', `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution'
+            if ($num_of_img_name == 0){
+                if(is_array($_FILES)) {
+                    if(is_uploaded_file($_FILES['image']['tmp_name'])) {
+                        $sourcePath = $_FILES['image']['tmp_name'];
+                        $targetPath = "image/".$_FILES['image']['name'];
+                        if (move_uploaded_file($sourcePath, $targetPath)) {
+                            $update_image_sql = "UPDATE `customers` SET `picture` = '$img', `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution'
                                          WHERE `customers`.`id` = '$id'";
-                        $stmt = $db->prepare($update_image_sql);
-                        $result = $stmt->execute();
-                        $user_class->returnJSON("OK", "Uspešno ste izmenili podatke o korisniku.");
-                        return;
-                    }else {
-                        $user_class->returnJSON("inavalid", "Error.");
-                        return;
+                            $stmt = $db->prepare($update_image_sql);
+                            $result = $stmt->execute();
+                            $user_class->returnJSON("OK", "Uspešno ste izmenili podatke o korisniku.");
+                            return;
+                        }else {
+                            $user_class->returnJSON("inavalid", "Error.");
+                            return;
+                        }
                     }
                 }
-            }
 
-        }else{
+            }
+        }
+        else{
             $update_image_sql = "UPDATE `customers` SET `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution', `sum_points` = '$sum_points'
                                          WHERE `customers`.`id` = '$id'";
             $stmt = $db->prepare($update_image_sql);
