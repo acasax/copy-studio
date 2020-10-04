@@ -2145,9 +2145,6 @@ body.active-preloader-ovh {
   width: 100%;
   height: 580px; }
 
-.contact-section {
-  padding: 20px 0px;
-}
 
 .contact-section .title {
   margin-bottom: 50px; }
@@ -2177,7 +2174,7 @@ body.active-preloader-ovh {
   }
 
   .contact-form-container {
-    background-image: url("../img/pattern za belu pozadinu.png");
+    background-image: url("../img/patern beli.png");
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
