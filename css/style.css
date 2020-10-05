@@ -764,7 +764,7 @@ body.active-preloader-ovh {
 
 .btn_nav {
   position: absolute;
-  top: 20%;
+  top: 30%;
   right: 40px;
 }
 
@@ -2937,7 +2937,7 @@ body.active-preloader-ovh {
 }
 
 .footer {
-  background-image: url("../img/Donji deo sajta.png") !important;
+  background-image: url("../img/EF.png") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
