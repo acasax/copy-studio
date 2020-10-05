@@ -2388,6 +2388,7 @@ body.active-preloader-ovh {
     font-size: 16px;
     line-height: 30px;
     margin: 0;
+    text-align: justify;
     transition: all .4s ease; }
   .about-section .single-about .text-box a.read-more {
     width: 42px;

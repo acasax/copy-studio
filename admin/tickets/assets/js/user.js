@@ -3,7 +3,8 @@ $(document).ready(function() {
         $('#user_form')[0].reset();
         $('.modal-title').text("Unos");
         $('#image').val("");
-        $('#imagelabel').text("");
+        $('#imagelabel').text(" ");
+        $('.custom-file-label').text(" ");
         $('#action').val("Dodaj");
         $('#operation').val("Dodaj");
     });
@@ -21,9 +22,9 @@ $(document).ready(function() {
             "targets": [0, 3, 4],
             "orderable": false,
         }, ],
-        "lengthMenu": [ 5 ],
+        "lengthMenu": [ 6 ],
         "language": {
-            "lengthMenu": "Prikazi maks 5 korisnika po strani",
+            "lengthMenu": "Prikazi maks 6 korisnika po strani",
             "zeroRecords": "zero records",
             "info": "_PAGE_. strana od _PAGES_ strana",
             "infoEmpty": "No records available",
