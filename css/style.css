@@ -615,7 +615,8 @@ body.active-preloader-ovh {
         font-weight: bold;
         color: #212121; }
     .welcome-section .welcome-content p {
-      color: #757575; }
+      color: #757575;
+      text-align: justify;}
       .welcome-section .welcome-content p + p {
         margin-top: 20px; }
     .welcome-section .welcome-content a.thm-btn {
