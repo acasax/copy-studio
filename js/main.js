@@ -20,4 +20,5 @@ jQuery(document).on('ready', function() {
             $('.venobox').venobox();
         });
     });
+
 });

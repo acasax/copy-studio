@@ -618,6 +618,19 @@ if ($('#newsletter_form').length) {
 }
 
 
+$(document).on('click','.latex-cards .one-card',function (e) {
+    let elem = $(this)
+    while(!$(elem).hasClass('latex-card-root-elem')) {
+        elem = elem.parent()
+    }
+    if($(elem).hasClass('active')) {
+        $(elem).removeClass('active');
+    }else{
+        $(elem).addClass('active')
+    }
+
+
+})
 
 $(document).on('submit','#newsletter_form',function (e){
     e.preventDefault();

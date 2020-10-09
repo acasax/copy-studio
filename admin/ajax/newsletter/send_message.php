@@ -17,6 +17,13 @@ if(isset($_FILES['image']) && isset($_POST['mail_message'])){
         if (!file_exists($dest_file)) {
             throw new Exception("Došlo je do greške.Pokušajte ponovo.");
         }
+
+        /**
+         *  uzeti sve activne mailove iz newletters i proslediti im ove poruke
+         * proveri da ne pukne request zbog kolicine mail-ova
+         *
+         * @var  $email
+         */
       $email = 'stefan.milutinovic.rs@gmail.com';
       $data = [];
       $data['path'] = $dest_file;

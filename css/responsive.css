@@ -366,6 +366,14 @@
     .contact-infos-one-div > div{
         width: 100%;
     }
+
+    .latex-background {
+        height: 100vh !important;
+    }
+
+    .latex-cards .one-card {
+        width: 96% !important;
+    }
 }
 
 @media (max-width: 414px) {
@@ -409,6 +417,10 @@
 
     .mc4wp-form .mc4wp-form-fields label a {
         font-size: 13px;
+    }
+
+    .latex-cards .one-card {
+        width: 100%;
     }
 
 
