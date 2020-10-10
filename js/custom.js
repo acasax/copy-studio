@@ -628,9 +628,250 @@ $(document).on('click','.latex-cards .one-card',function (e) {
     }else{
         $(elem).addClass('active')
     }
-
-
 })
+
+
+function latexCardsRender() {
+    let latexCards = $('.latex-cards')
+
+    if(!latexCards) return;
+    latexCards.empty()
+
+    if(window.innerWidth < 1030) {
+        latexCards.append('<div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                            PVC <br/>\n' +
+            '                            FOLIJA / SJAJ\n' +
+            '                           <div class="arrow-button">\n' +
+            '                               <i class="fa fa-chevron-right"></i>\n' +
+            '                           </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+            '\n' +
+            '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        PVC <br/> FOLIJA / MAT\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+            '\n' +
+            '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        PVC FOLIJA <br/> PROVIDNA SJAJ\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+            '\n' +
+            '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        PVC PERFORIRANA <br/> FOLIJA\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Ovaj popularni PVC materijal nazvan i kao One Way Vision folija tj. tačkasta perforirana folija koja podstiče sjajan efekat otvorenosti izloga gledano sa unutrašnje strane prostorije, dok se spolja jasno samo vidi brendirani izlog.\n' +
+            '                        Jako je popularna i ostavlja dobar utisak kako na posmatrača tako i na sam brend..<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        CERADA <br/> LIVENA\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene štampe na ovoj livenoj ceradi je široko. Materijal koji se odlično pokazao  kako sa kvalitetom same štampe tako i sa izdržljivošću u različitim atmosferskim prilikama. Može se na krajevima ojačati providnim ringlicama koje omogućavaju vidljivost štampe i na mestima za ringlice i veoma laganu montažu cerade.</div>\n' +
+            '                </div> <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        CANVAS <br/> SLIKARSKO PLATNO\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Ovo visokokvalitetno platno omogućava prenos željenih fotografija na pamučno platno putem digitalne štampe.\n' +
+            '                        Uz napomenu da se isporučuje kako samostalno, tako i uramljeno blind ramovima debljine 2cm i 4cm.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        POLYPROPILEN <br/> BANER\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Materijal predviđen uglavnom za štampu i montažu Roll Up Banera. Ova vrsta štampe i mehanizam Roll Up Banera najčešće se koristi na predavanjima, prezentacijama, sajmovima, gde se po pravilu kreće veliki broj ljudi i omogućava da se vaša reklama veoma dobro uoči, a veoma je laka za rasklapanje i prenošenje.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        CITY LIGHT <br/> PAPIR (150gr.)\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ovog materijala je dvostruko. Pored vrhunske Latex štampe samih postera, predviđen je i za apliciranje na svetlećim panelima gde još više naglašava vrhunski izgled štampe.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        FLEX FOLIJA <br/> ZA ŠTAMPU\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Materijal predviđen za štampu na pamučnim materijalima, uglavnom majicama i duksevima uz vrhunski kvalitet štampe. Materijal je prilično tanak i jako dobro prianja na material.\n' +
+            '\n' +
+            '                        Omogućava održavanje čak i do 60°, bez neželjenih efekata, jer se štampa pokazala kao jako postojana i izdržljiva.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        SATIN <br/> (260gr.)\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Materijal predviđen za štampu postera. Papir težine 260gr. u polumat varijanti. Izgleda jako otmeno i štampa dolazi do punog izražaja. Jako je blizak fotografskom papiru.\n' +
+            '\n' +
+            '                        Pogodan je za kaširanje na forexu i karton peni.</div>\n' +
+            '                </div>')
+    }else{
+       latexCards.append('<div class="row h-50">\n' +
+           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                            PVC <br/>\n' +
+           '                            FOLIJA / SJAJ\n' +
+           '                           <div class="arrow-button">\n' +
+           '                               <i class="fa fa-chevron-right"></i>\n' +
+           '                           </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+           '\n' +
+           '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+           '                </div>\n' +
+           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        PVC <br/> FOLIJA / MAT\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+           '\n' +
+           '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+           '                </div>\n' +
+           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        PVC FOLIJA <br/> PROVIDNA SJAJ\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+           '\n' +
+           '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        PVC PERFORIRANA <br/> FOLIJA\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Ovaj popularni PVC materijal nazvan i kao One Way Vision folija tj. tačkasta perforirana folija koja podstiče sjajan efekat otvorenosti izloga gledano sa unutrašnje strane prostorije, dok se spolja jasno samo vidi brendirani izlog.\n' +
+           '                        Jako je popularna i ostavlja dobar utisak kako na posmatrača tako i na sam brend..<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        CERADA <br/> LIVENA\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Polje primene štampe na ovoj livenoj ceradi je široko. Materijal koji se odlično pokazao  kako sa kvalitetom same štampe tako i sa izdržljivošću u različitim atmosferskim prilikama. Može se na krajevima ojačati providnim ringlicama koje omogućavaju vidljivost štampe i na mestima za ringlice i veoma laganu montažu cerade.</div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '            </div>\n' +
+           '            <div class="row h-50 align-items-start">\n' +
+           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        CANVAS <br/> SLIKARSKO PLATNO\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Ovo visokokvalitetno platno omogućava prenos željenih fotografija na pamučno platno putem digitalne štampe.\n' +
+           '                        Uz napomenu da se isporučuje kako samostalno, tako i uramljeno blind ramovima debljine 2cm i 4cm.</div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        POLYPROPILEN <br/> BANER\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Materijal predviđen uglavnom za štampu i montažu Roll Up Banera. Ova vrsta štampe i mehanizam Roll Up Banera najčešće se koristi na predavanjima, prezentacijama, sajmovima, gde se po pravilu kreće veliki broj ljudi i omogućava da se vaša reklama veoma dobro uoči, a veoma je laka za rasklapanje i prenošenje.</div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        CITY LIGHT <br/> PAPIR (150gr.)\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Polje primene ovog materijala je dvostruko. Pored vrhunske Latex štampe samih postera, predviđen je i za apliciranje na svetlećim panelima gde još više naglašava vrhunski izgled štampe.</div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        FLEX FOLIJA <br/> ZA ŠTAMPU\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Materijal predviđen za štampu na pamučnim materijalima, uglavnom majicama i duksevima uz vrhunski kvalitet štampe. Materijal je prilično tanak i jako dobro prianja na material.\n' +
+           '\n' +
+           '                        Omogućava održavanje čak i do 60°, bez neželjenih efekata, jer se štampa pokazala kao jako postojana i izdržljiva.</div>\n' +
+           '                </div>\n' +
+           '\n' +
+           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+           '                    <div class="one-card">\n' +
+           '                        SATIN <br/> (260gr.)\n' +
+           '                        <div class="arrow-button">\n' +
+           '                            <i class="fa fa-chevron-right"></i>\n' +
+           '                        </div>\n' +
+           '                    </div>\n' +
+           '                    <div class="latex-desc-card">Materijal predviđen za štampu postera. Papir težine 260gr. u polumat varijanti. Izgleda jako otmeno i štampa dolazi do punog izražaja. Jako je blizak fotografskom papiru.\n' +
+           '\n' +
+           '                        Pogodan je za kaširanje na forexu i karton peni.</div>\n' +
+           '                </div>\n' +
+           '            </div>');
+    }
+}
+
+latexCardsRender();
+
+window.onresize = function(event) {
+    page_loader();
+    latexCardsRender();
+};
+
+
 
 $(document).on('submit','#newsletter_form',function (e){
     e.preventDefault();
