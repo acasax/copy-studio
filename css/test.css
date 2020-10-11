@@ -23,7 +23,6 @@
 .portfolio #portfolio-flters li {
     display: inline-block;
     vertical-align: middle;
-    width: 100%;
     padding: 0 1px;
     margin: 10px 0;
     list-style: none;
@@ -181,5 +180,8 @@ a:hover, a:visited, a:focus, a:active {
     .portfolio .portfolio-item {
         width: 100%;
     }
-    
+
+    .portfolio #portfolio-flters li {
+        width: 100%;
+    }
 }

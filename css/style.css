@@ -765,7 +765,7 @@ body.active-preloader-ovh {
 
 .btn_nav {
   position: absolute;
-  top: 30%;
+  bottom: 25%;
   right: 40px;
 }
 
