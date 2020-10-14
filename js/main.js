@@ -3,7 +3,7 @@ jQuery(document).on('ready', function() {
         var portfolioIsotope = $('.portfolio-container').isotope({
             itemSelector: '.portfolio-item',
             layoutMode: 'fitRows',
-            filter: '.filter-1'
+            filter: '.filter-5'
         });
 
         $('#portfolio-flters li').on('click', function() {
