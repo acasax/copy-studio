@@ -14,9 +14,11 @@ if (isset($_POST["operation"])) {
     $phone = $_POST['txt_phone'];
     $email = $_POST['txt_email'];
     $institution = $_POST['txt_institution'];
-    $sum_points = $_POST['txt_points'];
     $id = $_POST['user_id'];
 
+    if (!isset($img)){
+        $img = "user-default.jpg";
+    }
     if ($_POST["operation"] === "Dodaj") {
 
         $db->exec("set names utf8");
@@ -34,8 +36,8 @@ if (isset($_POST["operation"])) {
                     $targetPath = "image/".$_FILES['image']['name'];
                     if (move_uploaded_file($sourcePath, $targetPath)) {
                         $stmt = $db->prepare("
-                                INSERT INTO `customers` ( `picture`, `ticket_number`, `first_name`, `last_name`, `phone`, `e-mail`, `institution`, `sum_points`)
-                                 VALUES ( :picture, :ticket_number, :first_name, :last_name, :phone, :email, :institutio, :sum_points);
+                                INSERT INTO `customers` ( `picture`, `ticket_number`, `first_name`, `last_name`, `phone`, `e-mail`, `institution`)
+                                 VALUES ( :picture, :ticket_number, :first_name, :last_name, :phone, :email, :institutio);
                             ");
                         $result = $stmt->execute(
                             array(
@@ -46,18 +48,40 @@ if (isset($_POST["operation"])) {
                                 ':phone' => $phone,
                                 ':email' => $email,
                                 ':institutio' => $institution,
-                                ':sum_points' => $sum_points
                             )
                         );
                         $user_class->returnJSON("OK", "Uspešno ste dodali korisnika.");
                         return;
                     }
+                    else {
+                    $user_class->returnJSON("ERROR", "Slika se nije uplodovala.");
+                    return;
+                    }
+                }
+                else {
+                    $stmt = $db->prepare("
+                                INSERT INTO `customers` ( `picture`, `ticket_number`, `first_name`, `last_name`, `phone`, `e-mail`, `institution`)
+                                 VALUES ( :picture, :ticket_number, :first_name, :last_name, :phone, :email, :institutio);
+                            ");
+                    $result = $stmt->execute(
+                        array(
+                            ':picture'   => $img,
+                            ':ticket_number' => $tNumber,
+                            ':first_name' => $name,
+                            ':last_name' => $lName,
+                            ':phone' => $phone,
+                            ':email' => $email,
+                            ':institutio' => $institution,
+                        )
+                    );
+                    $user_class->returnJSON("OK", "Uspešno ste dodali korisnika.");
+                    return;
                 }
             }
-        }
-        else {
+            else {
             $user_class->returnJSON('ERROR', "Slika sa ovim nazivom već postoji.");
             return;
+            }
         }
     }
 

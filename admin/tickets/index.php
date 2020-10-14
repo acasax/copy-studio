@@ -84,16 +84,12 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Unesi e-mail</label>
-                        <input type="text" name="txt_email" id="txt_email"  onblur="$(this).valid()" class="form-control" placeholder="" required>
+                        <input type="text" name="txt_email" id="txt_email"  onblur="$(this).valid()" class="form-control" placeholder="" >
                         <p class="blockquote-footer">xxxxxx@xxxx.xxx</p>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Unesi naziv institucije</label>
-                        <input type="text" name="txt_institution" id="txt_institution"  onblur="$(this).valid()" class="form-control" placeholder="" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Unesi trenutni broj poena</label>
-                        <input type="text" name="txt_points" id="txt_points"  onblur="$(this).valid()" class="form-control" placeholder="" required>
+                        <input type="text" name="txt_institution" id="txt_institution"  onblur="$(this).valid()" class="form-control" placeholder="" >
                     </div>
 
             </div>
@@ -121,6 +117,7 @@
 
     <script type="text/javascript" language="javascript" src="assets/js/user.js" ></script>
     <script type="text/javascript" language="javascript" src="assets/vendor/swall/sweetalert.js" ></script>
+    <script type="text/javascript" language="JavaScript" src="../../js/pagination.js"></script>
 
     <script src="assets/vendor/form-validation/jquery.form.js"></script>
     <script src="assets/vendor/form-validation/jquery.validate.min.js"></script>

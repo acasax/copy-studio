@@ -9,34 +9,37 @@ $(document).ready(function() {
         $('#operation').val("Dodaj");
     });
 
+
     let dataTable = $('#user_data').DataTable({
-        "processing":true,
-        "serverSide": true,
+        //"processing":true,
+        "serverSide":true,
         "autoWidth": false,
-        "order": [],
-        "ajax": {
-            url: "php_assets/user_functions/user_function.php",
-            type: "POST"
+        "order":[],
+        "ajax":{
+            url:"php_assets/user_functions/user_function.php",
+            type:"POST"
         },
-        "columnDefs": [{
-            "targets": [0, 3, 4],
-            "orderable": false,
-        }, ],
-        "lengthMenu": [ 6 ],
-        "language": {
-            "lengthMenu": "Prikazi maks 6 korisnika po strani",
-            "zeroRecords": "zero records",
-            "info": "_PAGE_. strana od _PAGES_ strana",
+        "columnDefs":[
+            {
+                "targets":[0, 3, 4],
+                "orderable":false,
+            },
+        ],
+        "lengthMenu": [ 5, 6 ],
+        "language":{
+            "lengthMenu": "Prikaži _MENU_ korisnika po strani",
+            "zeroRecords": "Ništa nije pronađeno",
+            "info": "Prikazana strana _PAGE_ od _PAGES_",
             "infoEmpty": "No records available",
-            "infoFiltered": "(Show _MAX_ of all image)",
-            "loadingRecords": "Loading...",
-            "processing": "Loading",
-            "search": "Pretraga:",
+            "infoFiltered": "(Pretraži _MAX_ od svih upisa)",
+            "loadingRecords": "Učitavanje...",
+            "processing":     "Učitavanje",
+            "search":         "Pretraga:",
             "paginate": {
-                "first": "First",
-                "last": "Last",
-                "next": "->",
-                "previous": "<-"
+                "first":      "Prvi",
+                "last":       "Poslednji",
+                "next":       "->",
+                "previous":   "<-"
             },
         },
 
@@ -59,15 +62,6 @@ $(document).ready(function() {
                 },
                 txt_phone: {
                     required: true
-                },
-                txt_email: {
-                    required: true
-                },
-                txt_institution: {
-                    required: true,
-                },
-                txt_points: {
-                    required: true,
                 }
             },
             messages: {
@@ -82,15 +76,6 @@ $(document).ready(function() {
                 },
                 txt_phone: {
                     required: "Unesite broj korisnika",
-                },
-                txt_email: {
-                    required: "Unesite email korisnika",
-                },
-                txt_institution: {
-                    required: "Unesite instituciju",
-                },
-                txt_points: {
-                    required: "Unesite trenutni broj poena",
                 }
             },
             submitHandler: function submitHandler(form) {

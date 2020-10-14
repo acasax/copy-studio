@@ -22,6 +22,11 @@ if (isset($_POST["order"])) {
     $query .= 'ORDER BY customers.id DESC ';
 }
 
+if($_POST["length"] != -1)
+{
+    $query .= 'LIMIT ' .$_POST['start'] . ', ' . $_POST['length'];
+}
+
 $stmt = $db->prepare($query);
 $stmt->execute();
 
@@ -32,7 +37,9 @@ $data = array();
 $filtered_rows = $stmt->rowCount();
 
 foreach ($result as $row) {
-
+    if ($row["picture"] == null){
+        $row["picture"] = "user-default.jpg";
+    }
     $sub_array = array();
     $img = "php_assets/user_functions/image/" . $row["picture"];
     $sub_array[] = $row["ticket_number"];
