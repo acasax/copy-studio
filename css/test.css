@@ -9,6 +9,9 @@
     text-align: center;
     margin-left: -1px;
     margin-right: -1px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 #portfolio .tab-content {
