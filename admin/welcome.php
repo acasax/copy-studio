@@ -2,6 +2,21 @@
 <html>
     <head>
         <title>Copy Studio 88</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="60x60" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="76x76" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="120x120" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="144x144" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="152x152" href="../img/logo-short.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../img/logo-short.ico">
+        <link rel="icon" type="image/png" sizes="192x192" href="../img/logo-short.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/logo-short.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="../img/logo-short.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/logo-short.ico">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="../img/logo-short.ico">
         <!--Stylesheet -->
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
         <!--Bootstrap-->

@@ -754,7 +754,6 @@ body.active-preloader-ovh {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   width: 100%;
-  margin-top: -25px;
 }
 
 @media (max-width: 1024px) {
@@ -765,7 +764,7 @@ body.active-preloader-ovh {
 
 .btn_nav {
   position: absolute;
-  bottom: 25%;
+  bottom: 24%;
   right: 40px;
 }
 

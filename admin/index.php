@@ -40,6 +40,21 @@ if ($role !== "admin") {
     <title>Copy Studio | Newsletter </title>
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../img/logo-short.ico">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/logo-short.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/logo-short.ico">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->

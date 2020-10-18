@@ -5,6 +5,21 @@
     <title>CopyStudio</title>
     <!--Stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/logo-short.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/logo-short.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/logo-short.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/logo-short.ico">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
