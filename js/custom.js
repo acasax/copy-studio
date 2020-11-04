@@ -499,7 +499,7 @@ function contactFormValidation() {
                         showConfirmButton: false,
                         type: "error"
                     });
-                    grecaptcha.reset();
+                    //grecaptcha.reset();
                 },
                 complete: function () {
                     $('.loading-area').fadeOut(2000)
