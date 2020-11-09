@@ -400,120 +400,6 @@ const translate = (attribute)=>{
 }
 
 
-
-
-
-function contactFormValidation() {
-
-
-
-
-
-
-    let language = void(0)
-    let lang = 'en'
-
-    if(localStorage.getItem('copyStudio')){
-        lang = localStorage.getItem('copyStudio')
-    }
-
-
-
-    /** CONTACT FORM SUBMIT / VALIDATION */
-    if ($('.contact-form').length) {
-    $('.contact-form').validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
-            },
-            message: {
-                required: true,
-                minlength: 20
-            },
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-            name: {
-                required: translate('nameRequired'),
-                minlength: translate('nameMinLength'),
-            },
-            message: {
-                required:  translate('messageRequired'),
-                minlength: translate('messageMinLength'),
-            },
-            email: {
-                required: translate('emailRequired'),
-            }
-        },
-        submitHandler: function submitHandler(form) {
-            const data = {
-                name: $('#name').val(),
-                email: $('#email').val(),
-                message: $('#message').val(),
-                "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
-            }
-            $(form).ajaxSubmit({
-                url: 'app/ajax/send_email.php',
-                type: "POST",
-                data: data,
-                dataType: "JSON",
-                beforeSend: function () {
-                    $('.loading-area').css('display', 'block')
-                },
-                success: function success(data) {
-                    if (data.type === "message") {
-                        swal({
-                            title: translate(data.welcome),
-                            text: translate(data.secMsg),
-                            timer: 4000,
-                            showCancelButton: false,
-                            showConfirmButton: false,
-                            type: "success"
-                        });
-                        form.reset();
-                        grecaptcha.reset();
-                    } else {
-                        let str = data.text;
-                        swal({
-                            title: "Error",
-                            text: str,
-                            timer: 3000,
-                            showCancelButton: false,
-                            showConfirmButton: false,
-                            type: "error"
-                        });
-                        form.valid()
-                        grecaptcha.reset();
-                    }
-                },
-                error: function error() {
-                    swal({
-                        title: "Error",
-                        text: translate('globalErrorMsg'),
-                        timer: 3000,
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        type: "error"
-                    });
-                    //grecaptcha.reset();
-                },
-                complete: function () {
-                    $('.loading-area').fadeOut(2000)
-                    setTimeout( ()=>{
-                        $('.loading-area').css('display', 'none')
-                    },1000)
-                }
-            });
-        }
-    });
-
-    }
-}
-
 $(document).on('blur','#EMAIL',function (e){
 
 })
@@ -1017,7 +903,6 @@ jQuery(document).on('ready', function() {
         thmMailchimp();
         thmLightBox();
         thmCounter();
-        contactFormValidation();
         scrollToTarget();
         thmVideoPopup();
         accrodion();

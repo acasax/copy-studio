@@ -98,15 +98,16 @@
                     <div class="title">
                         <h4>Pošaljite nam e-mail</h4>
                     </div><!-- /.title -->
-                    <form id="contact-form" class="contact-form">
+                    <form method="post" role="form" class="contact-form">
                         <label for="name">Ime i prezime</label>
                         <input type="text" id="name" name="name" placeholder=""  />
                         <label for="email1">E-mail adresa</label>
                         <input type="text" id="email1" name="email" placeholder=""  />
                         <label for="message">Tvoja poruka</label>
                         <textarea name="message" id="message" placeholder="" ></textarea>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                         <div class="contact-form-buttons-part">
-                            <button type="submit" class="thm-btn grey-bg">Pošalji poruku</button>
+                            <button value="sr" data-toggle="modal" data-target="#myModal" type="button" id="emailSend" class="btn btn-md site-lang thm-btn grey-bg">Pošalji Poruku</button>
                         </div>
                     </form>
                 </div><!-- /.contact-form-content -->
@@ -155,6 +156,22 @@
                             </div>
                         </div>
 
+                        <!-- Modal -->
+                        <div class="modal mt-5" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="margin-top: 150px !important;">
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">U redu</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div><!-- /.contact-info -->
@@ -258,6 +275,9 @@
 </div>
 <div class="scroll-to-top scroll-to-target" data-target="html"><i class="fas fa-angle-up"></i></div>
 
+
+<script src="https://www.google.com/recaptcha/api.js?render=6Lep9uAZAAAAALs8ucbCiJGVSN2NRX2qQNVTJrUc"></script>
+
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
@@ -270,8 +290,9 @@
 <script src="js/wow.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/custom.js"></script>
-
 <script src="plugins/swall/sweetalert.js"></script>
+
+
 
 <script src="plugins/form-validation/jquery.form.js"></script>
 <script src="plugins/form-validation/jquery.validate.min.js"></script>
@@ -281,6 +302,8 @@
 <!-- google map helper -->
 <script src="js/gmaps.js"></script>
 <script src="js/map-helper.js"></script>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
