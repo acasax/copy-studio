@@ -25,8 +25,9 @@
     <link rel="stylesheet" href="css/responsive.css?1231">
     <link rel="stylesheet" href="dist/css/loginArea.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/particle.css" />
 </head>
-<body class="active-preloader-ovh">
+<body class="active-preloader-ovh" id="particles-js">
 
 <div class="preloader"><div class="spinner"></div></div><!-- /.preloader -->
 <header class="header home-page-one">
@@ -315,7 +316,13 @@
 <script src="js/waypoints.min.js"></script>
 <script src="js/custom.js"></script>
 
-
+<script type="text/javascript" src="js/particles.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particlesjs-config.json', function(){
+        console.log('Copy studio vredi posetiti');
+    });
+</script>
 
 </body>
 </html>
