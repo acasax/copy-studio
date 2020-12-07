@@ -58,6 +58,18 @@
   width:  100% !important;
 }*/
 
+@media (max-width: 480px) {
+      .promo {
+        display: none !important;
+      }
+}
+
+@media (min-width: 480px) {
+  .promo1 {
+    display: none !important;
+  }
+}
+
 body {
   font-family: 'Nunito Sans', sans-serif;
   color: #757575;
@@ -520,6 +532,8 @@ body.active-preloader-ovh {
   background-size: cover;
   background-position: center center;
   background-color: #212121; }
+
+
 
 .slider-home-one .content {
   text-align: center;
