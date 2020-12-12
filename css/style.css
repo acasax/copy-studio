@@ -219,7 +219,7 @@ body.active-preloader-ovh {
 * 3. header styles
 ***************************/
 .header-navigation {
-  background-image: url("../img/patern.png") !important;
+  background-image: url("../img/patern.webp") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
