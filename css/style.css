@@ -58,6 +58,18 @@
   width:  100% !important;
 }*/
 
+@media (max-width: 480px) {
+      .promo {
+        display: none !important;
+      }
+}
+
+@media (min-width: 480px) {
+  .promo1 {
+    display: none !important;
+  }
+}
+
 body {
   font-family: 'Nunito Sans', sans-serif;
   color: #757575;
@@ -207,7 +219,7 @@ body.active-preloader-ovh {
 * 3. header styles
 ***************************/
 .header-navigation {
-  background-image: url("../img/patern.png") !important;
+  background-image: url("../img/patern.webp") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -521,6 +533,8 @@ body.active-preloader-ovh {
   background-position: center center;
   background-color: #212121; }
 
+
+
 .slider-home-one .content {
   text-align: center;
   position: relative;
@@ -596,7 +610,7 @@ body.active-preloader-ovh {
 * 5. welcome styles
 ***************************/
 .welcome-section {
-  background: #F5F6FA; }
+   }
   .welcome-section .welcome-content {
     padding-left: 56px; }
     .welcome-section .welcome-content p {
@@ -2938,7 +2952,7 @@ body.active-preloader-ovh {
 }
 
 .footer {
-  background-image: url("../img/EF.png") !important;
+  background-image: url("../img/EF.webp") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;

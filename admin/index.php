@@ -225,9 +225,10 @@ if ($role !== "admin") {
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="mail_message"></label><textarea id="mail_message" name="mail_message"></textarea>
+                                        <textarea id="mail_message" name="mail_message"></textarea>
                                     </div>
                                 </div>
                             </div>

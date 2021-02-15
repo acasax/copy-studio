@@ -21,18 +21,21 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/logo-short.ico">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="css/style.css?123">
+    <meta name="description" content="Interesantan sklop mladih ljudi sa drugačijim pogledom na svet, što predstavlja idealnu kombinaciju, kako za stvaralaštvo i kreativnost, tako i za finalnu doradu odštampanih materijala.">
+    <meta name="keywords" content="Reklamni materijal cena, Stampanje reklamnog materijala, štampanje šolja, agende, print, majce štampa, štampa beževa, izrada bedzeva, Tvrdi povez, Tvrdi povez, Koricenje knjiga, Koricenje knjiga cena">
+    <meta name="tag" content="Reklamni materijal cene, Promo materijal, Najbolja stampa na majicama, Digitalna stampa na majicama, Sito stampa na majicama, Flok stampa na majicama, štampa beževa, izrada bedzeva">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="css/responsive.css?123">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="plugins/venobox/venobox.css">
     <link rel="stylesheet" href="plugins/boxicons/css/boxicons.css">
     <link rel="stylesheet" href="plugins/_icofont/icofont.min.css">
     <link rel="stylesheet" href="dist/css/loginArea.css" />
+    <link rel="stylesheet" href="css/particle.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
 </head>
-<body class="active-preloader-ovh">
+<body id="particles-js">
 
-<div class="preloader"><div class="spinner"></div></div><!-- /.preloader -->
 <header class="header home-page-one">
     <nav class="navbar navbar-default header-navigation stricky">
         <div class="thm-container clearfix">
@@ -73,14 +76,12 @@
                     </li>
                 </ul>
                 <div class="btn_nav">
-                    <a href="https://www.instagram.com/copystudio.ks/" ><img src="img/poruci%20odmah.png" style="max-width: 250px;" alt="text"></a>
+                    <a href="https://www.instagram.com/copystudio.ks/" ><img src="img/poruci_odmah.webp" style="max-width: 250px;" alt="text"></a>
                 </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
 </header><!-- /.header -->
-
-
 <section class="page-title">
     <div class="thm-container">
         <h3>Usluge</h3>
@@ -89,36 +90,42 @@
 
 <section id="portfolio" class="portfolio section-bg">
     <div class="container " data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
-            <ul id="portfolio-flters" >
-                <li data-filter=".filter-5" data-tab-name="postcard" class="col-md-2 col-md-offset-1">
+        <div class="col-12">
+            <ul id="portfolio-flters" class="row">
+                <li data-filter=".filter-5" data-tab-name="postcard" class="col-12 col-md-2">
                     <a href="#postcard" aria-controls="postcard" role="tab" data-toggle="tab" class="hvr-bounce-to-bottom">
-                        <i class="fa fa-user-circle"></i>
+                        <i class="far fa-lightbulb"></i>
                         <h3><br />NAŠ TIM </h3>
                     </a>
                 </li>
-                <li data-filter=".filter-3" data-tab-name="poster" class="filter-active col-md-2">
+                <li data-filter=".filter-3" data-tab-name="poster" class="filter-active col-12 col-md-2">
                     <a href="#poster" aria-controls="poster" role="tab" data-toggle="tab" class="hvr-bounce-to-bottom">
                         <i class="fa fa-print"></i>
                         <h3>LATEX <br />ŠTAMPA</h3>
                     </a>
                 </li>
-                <li data-filter=".filter-1" data-tab-name="tshirt" class="col-md-2 ">
+                <li data-filter=".filter-1" data-tab-name="tshirt" class="col-12 col-md-2 ">
                     <a href="#tshirt" aria-controls="tshirt" role="tab" data-toggle="tab" class="hvr-bounce-to-bottom" >
                         <i class="printify-icon-t-shirt-with-square"></i>
                         <h3>ŠTAMPA NA <br />MAJICAMA</h3>
                     </a>
                 </li>
-                <li data-filter=".filter-2" data-tab-name="flyer" class="col-md-2">
+                <li data-filter=".filter-2" data-tab-name="flyer" class="col-12 col-md-2">
                     <a href="#flyer" aria-controls="flyer" role="tab" data-toggle="tab" class="hvr-bounce-to-bottom">
                         <i class="printify-icon-brochure-folded"></i>
                         <h3>PROMO <br />MATERIJAL</h3>
                     </a>
                 </li>
-                <li data-filter=".filter-4" data-tab-name="sticker" class="col-md-2">
+                <li data-filter=".filter-4" data-tab-name="sticker" class="col-12 col-md-2">
                     <a href="#sticker" aria-controls="sticker" role="tab" data-toggle="tab" class="hvr-bounce-to-bottom">
                         <i class="fa fa-certificate"></i>
                         <h3>ŠTAMPA NA <br />BEDŽEVIMA</h3>
+                    </a>
+                </li>
+                <li data-filter=".filter-6" data-tab-name="sticker" class="col-12 col-md-2">
+                    <a href="#team" aria-controls="team" role="tab" data-toggle="tab" class="hvr-bounce-to-bottom">
+                        <i class="fas fa-book"></i>
+                        <h3>TVRDI I MEKI <br />POVEZ</h3>
                     </a>
                 </li>
             </ul>
@@ -129,6 +136,12 @@
                 <div class="sec-title text-center mb0">
                     <h3>ŠTAMPA NA MAJICAMA</h3>
                     <p>Prenesite Vaše omiljenu aplikaciju, poruku, šta god poželite na majici!<br /> Budite originalni i prepoznatljivi. Budite najbolja verzija sebe!</p>
+                </div>
+            </div>
+            <div class="single-tab-content tab-pane fade " id="team">
+                <div class="sec-title text-center mb0">
+                    <h3>TVRDI I MEKI POVEZ</h3>
+                    <p>Dopustite da vaš toliko očekivani i željeni diplomski, master, specijalistički ili doktorski rad bude kruna vašeg obrazovanja u svakom pogledu.<br> Poverite nam odgovornost da zasijate u najbitnijim danima vašeg školovanja i budete najbolja verzije sebe.</p>
                 </div>
             </div>
             <div class="single-tab-content tab-pane fade" id="flyer">
@@ -160,230 +173,290 @@
         <div class="row portfolio-container">
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                <img src="img/slike/majce/2.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/majce/12.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/3.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/majce/s6.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/4.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/majce/s8.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/5.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/majce/s9.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/17.jpg" class="img-fluid" alt=" " width="300px" height="300px">
+                    <img src="img/slike/majce/16.png" class="img-fluid" alt=" " width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/22.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/majce/s10.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/23.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/majce/s15.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-1">
-                    <img src="img/slike/majce/40.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/majce/s23.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-1">
+                <img src="img/slike/majce/20.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-1">
+                <img src="img/slike/majce/21.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-1">
+                <img src="img/slike/majce/s26.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-1">
+                <img src="img/slike/majce/s29.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <!-- Promo Materijal -->
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/39.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/promomaterijal/44.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/38.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/promomaterijal/45.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/34.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/promomaterijal/46.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/31.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/47.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/27.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/s11.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/26.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/s16.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/19.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/s19.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/18.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/51.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/14.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/s20.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/13.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/s21.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/11.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/54.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/10.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                <img src="img/slike/promomaterijal/s25.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/9.jpg" class="img-fluid" alt="" width="300px" height="300px">
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/8.jpg" class="img-fluid" alt="" width="300px" height="300px">
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/7.jpg" class="img-fluid" alt="" width="300px" height="300px">
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/6.jpg" class="img-fluid" alt="" width="300px" height="300px">
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-2">
-                    <img src="img/slike/promomaterijal/1.jpg" class="img-fluid" alt="" width="300px" height="300px">
-            </div>
 
             <!-- Latex -->
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/16.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/1%20(1).png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/28.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/1%20(2).png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/29.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/1%20(3).png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/30.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/s1.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/32.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/1%20(5).png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/35.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/6.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/36.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/7.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-3">
-                    <img src="img/slike/latex/37.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/latex/8.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-3">
+                <img src="img/slike/latex/s2.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-3">
+                <img src="img/slike/latex/s17.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-3">
+                <img src="img/slike/latex/11.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-3">
+                <img src="img/slike/latex/s24.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
             <!-- BEDZEVI-->
             <div class="col-lg-4 col-md-6 portfolio-item filter-4">
-                    <img src="img/slike/bedzevi/12.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/bedzevi/35.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-4">
-                    <img src="img/slike/bedzevi/15.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/bedzevi/36.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-4">
-                    <img src="img/slike/bedzevi/25.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/bedzevi/37.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-4">
-                    <img src="img/slike/bedzevi/33.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/bedzevi/38.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-4">
-                    <img src="img/slike/bedzevi/41.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/bedzevi/39.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-4">
-                    <img src="img/slike/bedzevi/42.jpg" class="img-fluid" alt="" width="300px" height="300px">
+                    <img src="img/slike/bedzevi/40.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-4">
+                <img src="img/slike/bedzevi/41.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-4">
+                <img src="img/slike/bedzevi/42.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-4">
+                <img src="img/slike/bedzevi/43.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
             <!-- Nas tim -->
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(4).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(6).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t2.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(9).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t3.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(14).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t4.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(15).jpg" class="img-fluid" alt="" width="280px" height="155px">
-            </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(17).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t5.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(23).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t6.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(24).jpg" class="img-fluid" alt="" width="280px" height="155px">
-            </div>
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(27).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t7.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(28).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t8.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t9.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(29).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t10.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(32).jpg" class="img-fluid" alt="" width="280px" height="155px">
-            </div>
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(41).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t11.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(47).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-5">
+                <img src="img/Slike%204x4/t12.jpg" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(48).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <!-- Povez -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/24.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
 
-            <div class="col-lg-3 col-md-6 portfolio-item filter-5">
-                <img src="img/Slike%204x4/cs%20(53).jpg" class="img-fluid" alt="" width="280px" height="155px">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/25.png" class="img-fluid" alt="" width="300px" height="300px">
             </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/26.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/s4.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/s5.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/s7.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/s12.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/31.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/s13.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/33.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/s22.jpg" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-6">
+                <img src="img/slike/povez/56.png" class="img-fluid" alt="" width="300px" height="300px">
+            </div>
+
         </div>
     </div>
 </section>
 
 <div class="mapa w-100 d-none">
-    <div style="position:relative"><img id="main-image" src="img/mapa.png" width="100%">
+    <div style="position:relative"><img id="main-image" src="img/mapa.webp" width="100%">
         <a href="https://www.google.com/maps/place/Copy+Studio+Kru%C5%A1evac,+%D0%9A%D0%BE%D1%81%D0%B0%D0%BD%D1%87%D0%B8%D1%9B%D0%B5%D0%B2%D0%B0+24,+%D0%9A%D1%80%D1%83%D1%88%D0%B5%D0%B2%D0%B0%D1%86+37000/@43.580834,21.327866,17z/data=!4m2!3m1!1s0x475687ef760ac05b:0xa033eb2c0c377dd" class="rim-hotspot" style="width:6.4%; height:40.9%; left:60.9%; top:17.6%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
     </div>
 </div>
@@ -404,7 +477,7 @@
                         <span><i class="fa fa-phone"></i><a href="tel:0645478889">062 491 809</a></span>
                         <span><i class="fab fa-viber"></i><a href="viber://chat?number=%2B381645478889">064 547 888 9</a></span>
                         <span><i class="fa fa-envelope"></i><a href="mailto:copystudio.ks@gmail.com">copystudio.ks@gmail.com</a></span>
-                        <span><i class="fa fa-envelope"></i><a href="mailto:ponuda@copystudiokrusevac.com">ponuda@copystudiokrusevac.com</a></span>
+                        <span><i class="fa fa-envelope"></i><a href="mailto:office@copystudiokrusevac.com">office@copystudiokrusevac.com</a></span>
                         <span><i class="fab fa-instagram"></i><a href="https://www.instagram.com/copystudio.ks/">copystudio.ks</a></span>
                         <span><i class="fab fa-facebook"></i><a href="https://www.facebook.com/copystudio88/">Copy Studio Krusevac</a></span>
                     </div>
@@ -412,7 +485,7 @@
                 <div class="company-services col-md-4 col-xs-12 col-sm-12">
                     <div class="company widget">
                         <div class="footer-nav-menu">
-                            <h2 class="title">Copy Studio</h2>
+                            <h2 class="title">Studio 88</h2>
                             <div class="menu-container">
                                 <ul>
                                     <li><a href="index.html">Početna</a></li>
@@ -468,10 +541,10 @@
 
 <div class="fixed-contacts">
     <div class="root">
-        <a href="https://www.instagram.com/copystudio.ks/" target="_blank" class="instagram"><img src="img/slike/insta.png" width="393" height="50" /></a>
-        <a href="viber://chat?number=%2B381645478889" class="viber"><img src="img/slike/viber.png" width="393" height="50" /></a>
-        <a href="mailto:copystudio.ks@gmail.com" target="_blank" class="mail"><img src="img/slike/email.png" width="393" height="50" /></a>
-        <a href="https://www.facebook.com/copystudio88/" target="_blank" class="facebook"><img src="img/slike/facebook.png" width="393" height="50" /></a>
+        <a href="https://www.instagram.com/copystudio.ks/" target="_blank" class="instagram"><img src="img/insta.png" width="393" height="50" alt="text" /></a>
+        <a href="viber://chat?number=%2B381645478889" class="viber"><img src="img/viber.png" width="393" height="50" alt="text" /></a>
+        <a href="mailto:copystudio.ks@gmail.com" target="_blank" class="mail"><img src="img/email.png" width="393" height="50" alt="text" /></a>
+        <a href="https://www.facebook.com/copystudio88/" target="_blank" class="facebook"><img src="img/fb.png" width="393" height="50" alt="text" /></a>
     </div>
 </div>
 
@@ -498,7 +571,13 @@
 <script src="js/main.js"></script>
 <script src="plugins/venobox/venobox.min.js"></script>
 <script src="plugins/isotope-layout/isotope.pkgd.min.js"></script>
-
+<script type="text/javascript" src="js/particles.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particlesjs-config.json', function(){
+        console.log('Copy studio vredi posetiti');
+    });
+</script>
 
 
 </body>

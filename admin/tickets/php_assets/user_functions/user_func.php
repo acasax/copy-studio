@@ -116,7 +116,7 @@ if (isset($_POST["operation"])) {
             }
         }
         else{
-            $update_image_sql = "UPDATE `customers` SET `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution'
+            $update_image_sql = "UPDATE `customers` SET `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution', `sum_points` = '$sum_points'
                                          WHERE `customers`.`id` = '$id'";
             $stmt = $db->prepare($update_image_sql);
             $result = $stmt->execute();
