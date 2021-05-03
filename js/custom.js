@@ -1,18 +1,18 @@
 "use strict"; // Start of use strict
 
 function page_loader() {
-    $('.loading-area').fadeOut(2000)
-    setTimeout(()=>{
-        $('.loading-area').css('display','none')
-    },1500)
+    $('.loading-area').fadeOut(4000)
+    setTimeout(() => {
+        $('.loading-area').css('display', 'none')
+    }, 1500)
 };
 page_loader()
 
 
-function accrodion () {
+function accrodion() {
     if ($('.accrodion-grp').length) {
         var accrodionGrp = $('.accrodion-grp');
-        accrodionGrp.each(function () {
+        accrodionGrp.each(function() {
             var accrodionName = $(this).data('grp-name');
             var Self = $(this);
             var accordion = Self.find('.accrodion');
@@ -20,10 +20,10 @@ function accrodion () {
             Self.find('.accrodion .accrodion-content').hide();
             Self.find('.accrodion.active').find('.accrodion-content').show();
             accordion.each(function() {
-                $(this).find('.accrodion-title').on('click', function () {
-                    if ($(this).parent().hasClass('active') === false ) {
-                        $('.accrodion-grp.'+accrodionName).find('.accrodion').removeClass('active');
-                        $('.accrodion-grp.'+accrodionName).find('.accrodion').find('.accrodion-content').slideUp();
+                $(this).find('.accrodion-title').on('click', function() {
+                    if ($(this).parent().hasClass('active') === false) {
+                        $('.accrodion-grp.' + accrodionName).find('.accrodion').removeClass('active');
+                        $('.accrodion-grp.' + accrodionName).find('.accrodion').find('.accrodion-content').slideUp();
                         $(this).parent().addClass('active');
                         $(this).parent().find('.accrodion-content').slideDown();
                     };
@@ -251,7 +251,7 @@ function galleryMasonaryLayout() {
     }
 
     if ($('.post-filter').length) {
-    	var postFilterList = $('.post-filter li');
+        var postFilterList = $('.post-filter li');
         postFilterList.children('span').on('click', function() {
             var Self = $(this);
             var selector = Self.parent().attr('data-filter');
@@ -392,25 +392,25 @@ const languages = {
 }
 
 
-const translate = (attribute)=>{
+const translate = (attribute) => {
     const href = window.location.href
     let lang = 'sr'
-    if(href.includes('en')) lang = 'en';
+    if (href.includes('en')) lang = 'en';
     return languages[lang][attribute]
 }
 
 
-$(document).on('blur','#EMAIL',function (e){
+$(document).on('blur', '#EMAIL', function(e) {
 
 })
 
 /** CONTACT FORM SUBMIT / VALIDATION */
 if ($('#newsletter_form').length) {
-   const newsletterFormValidation =  $('#newsletter_form').validate({
-        errorPlacement: function(error,element) {
-            if(error) {
-              $('#newsletter_form').find('.mc4wp-form-fields').addClass('error')
-              return true
+    const newsletterFormValidation = $('#newsletter_form').validate({
+        errorPlacement: function(error, element) {
+            if (error) {
+                $('#newsletter_form').find('.mc4wp-form-fields').addClass('error')
+                return true
             }
             $('#newsletter_form').find('.mc4wp-form-fields').removeClass('error')
             return true;
@@ -441,15 +441,14 @@ if ($('#newsletter_form').length) {
                 url: "admin/newsletter.php",
                 method: 'POST',
                 data: {
-                  EMAIL: $('#EMAIL').val(),
-                  AGREE_TO_TERMS: $("#AGREE_TO_TERMS").val()
+                    EMAIL: $('#EMAIL').val(),
+                    AGREE_TO_TERMS: $("#AGREE_TO_TERMS").val()
                 },
-                success: function (data) {
+                success: function(data) {
                     var objResp = data;
-                    var str=objResp.type;
-                    if(str==='ERROR')
-                    {
-                        str=objResp.data;
+                    var str = objResp.type;
+                    if (str === 'ERROR') {
+                        str = objResp.data;
                         swal({
                             title: "Greška!",
                             text: str,
@@ -462,9 +461,8 @@ if ($('#newsletter_form').length) {
                         return;
                     }
 
-                    if(str==='OK')
-                    {
-                        str=objResp.data;
+                    if (str === 'OK') {
+                        str = objResp.data;
                         swal({
                             title: "Uspešno!",
                             text: str,
@@ -488,30 +486,30 @@ if ($('#newsletter_form').length) {
                         type: "error"
                     });
                 },
-                complete: function () {
+                complete: function() {
                     $('.loading-area').fadeOut(2000)
-                    setTimeout( ()=>{
+                    setTimeout(() => {
                         $('.loading-area').css('display', 'none')
-                    },1000)
+                    }, 1000)
                 }
             });
         }
     });
 
-   const  resetValidation = ()=> {
+    const resetValidation = () => {
         newsletterFormValidation.resetForm()
     }
 }
 
 
-$(document).on('click','.latex-cards .one-card',function (e) {
+$(document).on('click', '.latex-cards .one-card', function(e) {
     let elem = $(this)
-    while(!$(elem).hasClass('latex-card-root-elem')) {
+    while (!$(elem).hasClass('latex-card-root-elem')) {
         elem = elem.parent()
     }
-    if($(elem).hasClass('active')) {
+    if ($(elem).hasClass('active')) {
         $(elem).removeClass('active');
-    }else{
+    } else {
         $(elem).addClass('active')
     }
 })
@@ -520,10 +518,10 @@ $(document).on('click','.latex-cards .one-card',function (e) {
 function latexCardsRender() {
     let latexCards = $('.latex-cards')
 
-    if(!latexCards) return;
+    if (!latexCards) return;
     latexCards.empty()
 
-    if(window.innerWidth < 1030) {
+    if (window.innerWidth < 1030) {
         latexCards.append('<div class="latex-card-root-elem col-md-2 col-12">\n' +
             '                    <div class="one-card">\n' +
             '                            PVC <br/>\n' +
@@ -632,121 +630,121 @@ function latexCardsRender() {
             '\n' +
             '                        Pogodan je za kaširanje na forexu i karton peni.</div>\n' +
             '                </div>')
-    }else{
-       latexCards.append('<div class="row h-50">\n' +
-           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                            PVC <br/>\n' +
-           '                            FOLIJA / SJAJ\n' +
-           '                           <div class="arrow-button">\n' +
-           '                               <i class="fa fa-chevron-right"></i>\n' +
-           '                           </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
-           '\n' +
-           '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
-           '                </div>\n' +
-           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        PVC <br/> FOLIJA / MAT\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
-           '\n' +
-           '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
-           '                </div>\n' +
-           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        PVC FOLIJA <br/> PROVIDNA SJAJ\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
-           '\n' +
-           '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        PVC PERFORIRANA <br/> FOLIJA\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Ovaj popularni PVC materijal nazvan i kao One Way Vision folija tj. tačkasta perforirana folija koja podstiče sjajan efekat otvorenosti izloga gledano sa unutrašnje strane prostorije, dok se spolja jasno samo vidi brendirani izlog.\n' +
-           '                        Jako je popularna i ostavlja dobar utisak kako na posmatrača tako i na sam brend..<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        CERADA <br/> LIVENA\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Polje primene štampe na ovoj livenoj ceradi je široko. Materijal koji se odlično pokazao  kako sa kvalitetom same štampe tako i sa izdržljivošću u različitim atmosferskim prilikama. Može se na krajevima ojačati providnim ringlicama koje omogućavaju vidljivost štampe i na mestima za ringlice i veoma laganu montažu cerade.</div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '            </div>\n' +
-           '            <div class="row h-50 align-items-start">\n' +
-           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        CANVAS <br/> SLIKARSKO PLATNO\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Ovo visokokvalitetno platno omogućava prenos željenih fotografija na pamučno platno putem digitalne štampe.\n' +
-           '                        Uz napomenu da se isporučuje kako samostalno, tako i uramljeno blind ramovima debljine 2cm i 4cm.</div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        POLYPROPILEN <br/> BANER\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Materijal predviđen uglavnom za štampu i montažu Roll Up Banera. Ova vrsta štampe i mehanizam Roll Up Banera najčešće se koristi na predavanjima, prezentacijama, sajmovima, gde se po pravilu kreće veliki broj ljudi i omogućava da se vaša reklama veoma dobro uoči, a veoma je laka za rasklapanje i prenošenje.</div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        CITY LIGHT <br/> PAPIR (150gr.)\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Polje primene ovog materijala je dvostruko. Pored vrhunske Latex štampe samih postera, predviđen je i za apliciranje na svetlećim panelima gde još više naglašava vrhunski izgled štampe.</div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        FLEX FOLIJA <br/> ZA ŠTAMPU\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Materijal predviđen za štampu na pamučnim materijalima, uglavnom majicama i duksevima uz vrhunski kvalitet štampe. Materijal je prilično tanak i jako dobro prianja na material.\n' +
-           '\n' +
-           '                        Omogućava održavanje čak i do 60°, bez neželjenih efekata, jer se štampa pokazala kao jako postojana i izdržljiva.</div>\n' +
-           '                </div>\n' +
-           '\n' +
-           '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
-           '                    <div class="one-card">\n' +
-           '                        SATIN <br/> (260gr.)\n' +
-           '                        <div class="arrow-button">\n' +
-           '                            <i class="fa fa-chevron-right"></i>\n' +
-           '                        </div>\n' +
-           '                    </div>\n' +
-           '                    <div class="latex-desc-card">Materijal predviđen za štampu postera. Papir težine 260gr. u polumat varijanti. Izgleda jako otmeno i štampa dolazi do punog izražaja. Jako je blizak fotografskom papiru.\n' +
-           '\n' +
-           '                        Pogodan je za kaširanje na forexu i karton peni.</div>\n' +
-           '                </div>\n' +
-           '            </div>');
+    } else {
+        latexCards.append('<div class="row h-50">\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                            PVC <br/>\n' +
+            '                            FOLIJA / SJAJ\n' +
+            '                           <div class="arrow-button">\n' +
+            '                               <i class="fa fa-chevron-right"></i>\n' +
+            '                           </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+            '\n' +
+            '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        PVC <br/> FOLIJA / MAT\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+            '\n' +
+            '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        PVC FOLIJA <br/> PROVIDNA SJAJ\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ove PVC folije sa visokim sjajem u digitalnoj štampi je veoma široko.\n' +
+            '\n' +
+            '                        Najčešće se koristi za brendiranje izloga, štampu stikera različitih oblika i dimenzija, kao i za kaširanje na lexanu, forexu i karton peni.<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        PVC PERFORIRANA <br/> FOLIJA\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Ovaj popularni PVC materijal nazvan i kao One Way Vision folija tj. tačkasta perforirana folija koja podstiče sjajan efekat otvorenosti izloga gledano sa unutrašnje strane prostorije, dok se spolja jasno samo vidi brendirani izlog.\n' +
+            '                        Jako je popularna i ostavlja dobar utisak kako na posmatrača tako i na sam brend..<img src="img/latex-icon.png" class="latex-icon"/></div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        CERADA <br/> LIVENA\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene štampe na ovoj livenoj ceradi je široko. Materijal koji se odlično pokazao  kako sa kvalitetom same štampe tako i sa izdržljivošću u različitim atmosferskim prilikama. Može se na krajevima ojačati providnim ringlicama koje omogućavaju vidljivost štampe i na mestima za ringlice i veoma laganu montažu cerade.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '            </div>\n' +
+            '            <div class="row h-50 align-items-start">\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        CANVAS <br/> SLIKARSKO PLATNO\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Ovo visokokvalitetno platno omogućava prenos željenih fotografija na pamučno platno putem digitalne štampe.\n' +
+            '                        Uz napomenu da se isporučuje kako samostalno, tako i uramljeno blind ramovima debljine 2cm i 4cm.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        POLYPROPILEN <br/> BANER\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Materijal predviđen uglavnom za štampu i montažu Roll Up Banera. Ova vrsta štampe i mehanizam Roll Up Banera najčešće se koristi na predavanjima, prezentacijama, sajmovima, gde se po pravilu kreće veliki broj ljudi i omogućava da se vaša reklama veoma dobro uoči, a veoma je laka za rasklapanje i prenošenje.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        CITY LIGHT <br/> PAPIR (150gr.)\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Polje primene ovog materijala je dvostruko. Pored vrhunske Latex štampe samih postera, predviđen je i za apliciranje na svetlećim panelima gde još više naglašava vrhunski izgled štampe.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        FLEX FOLIJA <br/> ZA ŠTAMPU\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Materijal predviđen za štampu na pamučnim materijalima, uglavnom majicama i duksevima uz vrhunski kvalitet štampe. Materijal je prilično tanak i jako dobro prianja na material.\n' +
+            '\n' +
+            '                        Omogućava održavanje čak i do 60°, bez neželjenih efekata, jer se štampa pokazala kao jako postojana i izdržljiva.</div>\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="latex-card-root-elem sec-row col-md-2 col-12">\n' +
+            '                    <div class="one-card">\n' +
+            '                        SATIN <br/> (260gr.)\n' +
+            '                        <div class="arrow-button">\n' +
+            '                            <i class="fa fa-chevron-right"></i>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="latex-desc-card">Materijal predviđen za štampu postera. Papir težine 260gr. u polumat varijanti. Izgleda jako otmeno i štampa dolazi do punog izražaja. Jako je blizak fotografskom papiru.\n' +
+            '\n' +
+            '                        Pogodan je za kaširanje na forexu i karton peni.</div>\n' +
+            '                </div>\n' +
+            '            </div>');
     }
 }
 
@@ -759,7 +757,7 @@ window.onresize = function(event) {
 
 
 
-$(document).on('submit','#newsletter_form',function (e){
+$(document).on('submit', '#newsletter_form', function(e) {
     e.preventDefault();
     $.ajax({
 
@@ -795,14 +793,14 @@ function scrollToTarget() {
     }
 }
 
-function mobileNavToggle () {
+function mobileNavToggle() {
     if ($('#main-nav-bar .navbar-nav .sub-menu').length) {
-    	var subMenu = $('#main-nav-bar .navbar-nav .sub-menu');
-        subMenu.parent('li').children('a').append(function () {
+        var subMenu = $('#main-nav-bar .navbar-nav .sub-menu');
+        subMenu.parent('li').children('a').append(function() {
             return '<button class="sub-nav-toggler"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>';
         });
         var subNavToggler = $('#main-nav-bar .navbar-nav .sub-nav-toggler');
-        subNavToggler.on('click', function () {
+        subNavToggler.on('click', function() {
             var Self = $(this);
             Self.parent().parent().children('.sub-menu').slideToggle();
             return false;
@@ -813,7 +811,7 @@ function mobileNavToggle () {
 
 
 function handlePreloader() {
-    if($('.preloader').length){
+    if ($('.preloader').length) {
         $('body').removeClass('active-preloader-ovh');
         $('.preloader').fadeOut();
     }
@@ -862,10 +860,10 @@ function bootstrapAnimatedLayer() {
     });
 }
 
-function pogressbarAnim () {
+function pogressbarAnim() {
     if ($('.single-progress-bar .pogress-wow').length) {
         var wow = new WOW({
-            boxClass:     'pogress-wow',      // default
+            boxClass: 'pogress-wow', // default
             animateClass: 'animated',
             mobile: true
         });
@@ -877,12 +875,12 @@ function pogressbarAnim () {
 function thmHalfChart() {
     if ($('.circle').length) {
         var cricleWrap = $('.circle');
-        cricleWrap.each(function () {
+        cricleWrap.each(function() {
             var Self = $(this);
             var circleSize = Self.data('size');
             var circleValue = Self.data('value');
             var circleColor = Self.data('color');
-            Self.waypoint(function () {
+            Self.waypoint(function() {
                 Self.circleProgress({
                     value: circleValue,
                     size: circleSize,
@@ -917,7 +915,7 @@ jQuery(window).on('load', function() {
     (function($) {
         galleryMasonaryLayout();
         handlePreloader()
-        // thmScrollAnim();
+            // thmScrollAnim();
         pogressbarAnim();
         thmOwlCarousel();
     })(jQuery);
