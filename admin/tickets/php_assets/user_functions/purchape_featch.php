@@ -14,6 +14,12 @@ if (isset($_POST["order"])) {
 } else {
     $query .= 'ORDER BY purchase.id DESC ';
 }
+
+if($_POST["length"] != -1)
+{
+    $query .= 'LIMIT ' .$_POST['start'] . ', ' . $_POST['length'];
+}
+
 $stmt = $db->prepare($query);
 $stmt->execute();
 
@@ -35,7 +41,7 @@ foreach ($result as $row) {
 
 $output = array(
     "recordsTotal" => $filtered_rows,
-    "recordsFiltered" => get_total_all_records($db),
+    "recordsFiltered" => get_total_all_purchape_records($db, $_SESSION["id"]),
     "data" => $data
 );
 

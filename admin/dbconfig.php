@@ -2,10 +2,10 @@
 class Database
 {
 
-    private $host = "s13.loopia.se";
-    private $db_name = "copystudiokrusevac_com_db_1";
-    private $username = "black@c55748";
-    private $password = "Podlogazamis3344";
+    private $host = "localhost";
+    private $db_name = "copy_studio";
+    private $username = "root";
+    private $password = "";
     public $conn;
 
     public function dbConnection()

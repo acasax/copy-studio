@@ -22,14 +22,14 @@ $(document).ready(function() {
             "infoFiltered": "",
             "loadingRecords": "Loading...",
             "processing": "Loading",
-            "search": "",
-            "paginate": {
-                "first": "First",
-                "last": "Last",
-                "next": "->",
-                "previous": "<-"
-            },
-        },
+            "search": ""
+           
+        },"paginate": {
+            "first": "First",
+            "last": "Last",
+            "next": "->",
+            "previous": "<-"
+        }
 
     });
 
@@ -162,7 +162,7 @@ $(document).ready(function() {
                                 showConfirmButton: false,
                                 type: "success"
                             });
-                            $('#purchase_form')[0].reset();
+                            $('#ticket_form')[0].reset();
                             $('#exampleModalCenter').modal('hide');
                             window.location.reload();
                             dataTable.ajax.reload();
