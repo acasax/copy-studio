@@ -18,6 +18,7 @@ if (isset($_POST["user_id"])) {
     $output["phone"]= $result['phone'];
     $output["email"] = $result['e-mail'];
     $output["institution"] = $result['institution'];
+    $output["sum_points"]  = $result['sum_points'];
 
     echo json_encode($output);
 }

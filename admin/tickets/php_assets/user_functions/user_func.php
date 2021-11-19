@@ -86,6 +86,13 @@ if (isset($_POST["operation"])) {
     }
 
     if ($_POST["operation"] == "Promeni") {
+        $db->exec("set names utf8");
+        $get_sum_points_sql = "SELECT sum_points FROM `customers` WHERE `customers`.`id` = '$id'";
+        $sum_points_update = $db->prepare($get_sum_points_sql);
+        $sum_points_update->execute();
+        $row = $sum_points_update->fetch(PDO::FETCH_ASSOC);
+        $sum_point_update_value = $row['sum_points'];
+
         if($img != ""){
             $db->exec("set names utf8");
             $get_img_name_sql1 = "SELECT * FROM customers WHERE picture = '$img'";
@@ -100,7 +107,7 @@ if (isset($_POST["operation"])) {
                         $sourcePath = $_FILES['image']['tmp_name'];
                         $targetPath = "image/".$_FILES['image']['name'];
                         if (move_uploaded_file($sourcePath, $targetPath)) {
-                            $update_image_sql = "UPDATE `customers` SET `picture` = '$img', `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution'
+                            $update_image_sql = "UPDATE `customers` SET `picture` = '$img', `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution', `sum_points` = '$sum_point_update_value'
                                          WHERE `customers`.`id` = '$id'";
                             $stmt = $db->prepare($update_image_sql);
                             $result = $stmt->execute();
@@ -116,7 +123,7 @@ if (isset($_POST["operation"])) {
             }
         }
         else{
-            $update_image_sql = "UPDATE `customers` SET `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution', `sum_points` = '$sum_points'
+            $update_image_sql = "UPDATE `customers` SET `ticket_number` = '$tNumber', `first_name` = '$name', `last_name` = '$lName', `phone` = '$phone', `e-mail` = '$email', `institution` = '$institution', `sum_points` = '$sum_point_update_value'
                                          WHERE `customers`.`id` = '$id'";
             $stmt = $db->prepare($update_image_sql);
             $result = $stmt->execute();
