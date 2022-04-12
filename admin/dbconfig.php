@@ -8,11 +8,11 @@ class Database
     private $password = "Podlogazamis3344";
     public $conn;
 
-    /*private $host = "localhost";
-    private $db_name = "copy_studio";
-    private $username = "root";
-    private $password = "";
-    public $conn;*/
+    // private $host = "localhost";
+    // private $db_name = "copystudiokrusevac_com_db_1";
+    // private $username = "root";
+    // private $password = "";
+    // public $conn;
 
     public function dbConnection()
 	{

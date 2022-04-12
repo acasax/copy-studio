@@ -16,9 +16,6 @@ if (isset($_POST["operation"])) {
     $institution = $_POST['txt_institution'];
     $id = $_POST['user_id'];
 
-    if (!isset($img)){
-        $img = "user-default.jpg";
-    }
     if ($_POST["operation"] === "Dodaj") {
 
         $db->exec("set names utf8");
@@ -28,6 +25,24 @@ if (isset($_POST["operation"])) {
         $row = $get_img_name1->fetch(PDO::FETCH_ASSOC);
         $num_of_img_name = $get_img_name1->rowCount();
 
+        if(!$img){
+             $stmt = $db->prepare("
+                                INSERT INTO `customers` ( `ticket_number`, `first_name`, `last_name`, `phone`, `e-mail`, `institution`)
+                                 VALUES ( :ticket_number, :first_name, :last_name, :phone, :email, :institutio);
+                            ");
+                        $result = $stmt->execute(
+                            array(
+                                ':ticket_number' => $tNumber,
+                                ':first_name' => $name,
+                                ':last_name' => $lName,
+                                ':phone' => $phone,
+                                ':email' => $email,
+                                ':institutio' => $institution,
+                            )
+                        );
+                        $user_class->returnJSON("OK", "Uspešno ste dodali korisnika bez slike!");
+                        return;
+        }
 
         if ($num_of_img_name == 0) {
             if(is_array($_FILES)) {
